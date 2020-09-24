@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"net/url"
 	"os"
@@ -27,8 +28,9 @@ type callScraperStruct struct {
 }
 
 // --------------------------------- mutex var --------------------------------------
+
 var (
-	lambdaCountUID = 100
+	lambdaCountUID = createRandomFromRange(0, 200)
 	mutex          sync.Mutex
 )
 
@@ -40,9 +42,9 @@ var (
 
 // --------------------------------- server functions --------------------------------------
 //http://ec2-54-161-234-228.compute-1.amazonaws.com:3000/search?search=
-// ec2-54-161-234-228.compute-1.amazonaws.com
 // http://localhost:3000/search?search=
 func main() {
+	fmt.Printf("lambdaCountUID : %v\n", lambdaCountUID)
 	err := msqlf.Init("dohyung97022", "9347314da!", "adiy-db.cxdzwqqcqoib.us-east-1.rds.amazonaws.com", 3306, "adiy")
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
@@ -55,9 +57,9 @@ func main() {
 func handler(w http.ResponseWriter, r *http.Request) {
 	// ----------------- execution time -----------------
 	fmt.Println("request on 3000 (search)")
-	start := time.Now()
+	startTime := time.Now()
 	defer func() {
-		fmt.Printf("Binomial took %v\n", time.Since(start))
+		fmt.Printf("Binomial took %v\n", time.Since(startTime))
 	}()
 
 	// ----------------- parameters -----------------
@@ -68,12 +70,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	search := params[0]
-	v, err := msqlf.GetDataOfWhere("search", []string{"last_update", "srch_id"},
-		[]msqlf.Where{msqlf.Where{A: "query", IS: "=", B: search}})
-	if err != nil {
-		fmt.Printf("error : %v\n", err)
-		return
-	}
 	// avMax := queryIntDefaultZero("avmax", r)
 	// avMin := queryIntDefaultZero("avmin", r)
 	// sbMax := queryIntDefaultZero("sbmax", r)
@@ -82,20 +78,27 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// tvMin := queryIntDefaultZero("tvmax", r)
 
 	// ----------------- need scraping? -----------------
+	v, err := msqlf.GetDataOfWhere("search", []string{"last_update", "srch_id"},
+		[]msqlf.Where{msqlf.Where{A: "query", IS: "=", B: search}})
+	if err != nil {
+		fmt.Printf("error : %v\n", err)
+		return
+	}
+
 	needRef := false
 	// srchID := -1
-	// search table has no data of query
 	if len(v) == 0 {
+		// search table has no data of query
 		needRef = true
-		// search table has data of query
 	} else {
+		// search table has data of query
 		t, err := time.Parse("2006-01-02 15:04:05", v[0]["last_update"].(string))
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			return
 		}
 		// outdated, but has search data
-		if t.Before(time.Now().AddDate(0, 0, -2)) {
+		if t.Before(startTime.AddDate(0, 0, -2)) {
 			needRef = true
 			// srchID = v[0]["srch_id"].(int)
 		}
@@ -109,23 +112,83 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			fmt.Printf("error : %v\n", err)
 			return
 		}
-		resultInterface := make(map[int]map[string]interface{})
-		for intt, info := range intInfo {
-			resultInterface[intt] = make(map[string]interface{})
-			resultInterface[intt]["ChanUrl"] = info.ChanURL
-			resultInterface[intt]["Channel"] = info.Channel
-			resultInterface[intt]["Title"] = info.Title
-			resultInterface[intt]["ChanImg"] = info.ChanImg
-			resultInterface[intt]["About"] = info.About
-			resultInterface[intt]["Subs"] = info.Subs
-			resultInterface[intt]["Views"] = info.Views
-			resultInterface[intt]["AvrViews"] = info.AvrViews
-			resultInterface[intt]["UploadTime"] = info.UploadTime
-			resultInterface[intt]["Links"] = info.Links
+		var b strings.Builder
+		b.WriteString("INSERT INTO channels(channel, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
+		i := 0
+		for _, info := range intInfo {
+
+			b.WriteString("(")
+
+			b.WriteString("'")
+			b.WriteString(info.Channel)
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(info.ChanURL)
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(startTime.Format("2006-01-02 15:04:05"))
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(info.ChanImg)
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(strconv.Itoa(info.AvrViews))
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(strconv.Itoa(info.TTLViews))
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(strconv.Itoa(info.Subs))
+			b.WriteString("'")
+			b.WriteString(",")
+
+			b.WriteString("'")
+			b.WriteString(strings.ReplaceAll(info.About, "'", "`"))
+			b.WriteString("'")
+
+			b.WriteString(")")
+
+			fmt.Printf("i : %v\n", i)
+			if i == 4 {
+				break
+			}
+			b.WriteString(",")
+			i++
 		}
-		fmt.Printf("len resultInterface : %v\n", len(resultInterface))
+
+		//  INSERT INTO test () VALUES (); SET @last_id = LAST_INSERT_ID(); INSERT INTO test2 (id) VALUES (@last_id);
+		// 여기에서 LAST_INSERT_ID는 insert 구문에서 처음으로 insert 된 id값을 return한다. 그럼으로 우리가 insert한 length를 알고 있다면
+		// 넣은 데이터의 모든 chan_id를 알 수 있다. LAST_INSERT_ID ~ LAST_INSERT_ID+len(intInfo) ? (추정)
+
+		fmt.Printf("b : %v\n", b.String())
+		fmt.Printf("len intInfo : %v\n", len(intInfo))
 	} else {
 		// get from search.
+	}
+	type info struct {
+		ChanURL    string
+		Channel    string
+		Title      string
+		ChanImg    string
+		About      string
+		Subs       int
+		Views      int
+		AvrViews   int
+		UploadTime string
+		Links      map[string]string
+		Script     string
 	}
 
 	//데이터가 존재했었다. 이전의 업데이트가 부족한 체널들 scrape
@@ -406,7 +469,7 @@ type info struct {
 	ChanImg    string
 	About      string
 	Subs       int
-	Views      int
+	TTLViews   int
 	AvrViews   int
 	UploadTime string
 	Links      map[string]string
@@ -439,7 +502,7 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 		ChanImg:    "",
 		About:      "",
 		Subs:       0,
-		Views:      0,
+		TTLViews:   0,
 		AvrViews:   0,
 		UploadTime: "",
 		Links: map[string]string{
@@ -490,7 +553,7 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 	storeInfo.ChanImg += img
 	// total views
 	views := between(s, "viewCountText", ",\"")
-	storeInfo.Views += removeButNumber(views)
+	storeInfo.TTLViews += removeButNumber(views)
 	// abouts
 	abouts := after(s, "\"channelMetadataRenderer\":{\"title\":\"")
 	abouts = between(abouts, "description\":\"", "\",\"")
@@ -611,6 +674,10 @@ func between(str string, start string, end string) (result string) {
 }
 func createNewError(name string, id int) error {
 	return fmt.Errorf("user %q (id %d) not found", name, id)
+}
+func createRandomFromRange(min int, max int) int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(max-min) + min
 }
 func contains(arr []string, str string) bool {
 	for _, a := range arr {
