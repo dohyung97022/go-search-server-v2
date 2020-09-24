@@ -1,0 +1,48 @@
+FOLDER=go-search-server
+
+echo "running $FOLDER installer"
+
+ZIPFILE=/root/$FOLDER.zip
+rm $ZIPFILE
+wget -P /root https://go-server-bucket.s3.us-east-2.amazonaws.com/$FOLDER.zip
+
+
+if [ -f "$ZIPFILE" ];
+then
+    echo "$ZIPFILE exists."
+else
+    echo "$ZIPFILE did not download."
+    exit
+fi
+
+FILE=/root/$FOLDER
+if [ -d "$FILE" ]; then
+    echo "$FILE exists."
+    echo "We will Delete the original file"
+    rm -r $FILE
+fi
+
+PKGNAME=unzip
+if [ $(dpkg-query -W -f='${Status}' $PKGNAME 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  echo "Installing $PKGNAME."
+  sudo apt install $PKGNAME;
+fi
+
+unzip $ZIPFILE -d $FILE
+
+rm $ZIPFILE
+
+GOEXICUTE=/root/$FOLDER/$FOLDER
+if [ -f "$GOEXICUTE" ];
+then
+    echo "$GOEXICUTE exists."
+    echo "giving user permission to rwx"
+    chmod u+rwx $GOEXICUTE
+else
+    echo "$GOEXICUTE does not exist."
+    exit
+fi
+
+cd $FILE
+./$FOLDER

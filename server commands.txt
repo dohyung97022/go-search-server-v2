@@ -1,0 +1,33 @@
+//ubuntu update!
+sudo apt update
+sudo apt upgrade
+
+//지금 열려 있는 포트를 표시
+ss -nlt
+
+//권한 부여
+sudo su -
+
+//tor서비스를 실행 포트 socks5://127.0.0.1:9050에 tor를 실행
+sudo systemctl start tor
+
+//tor가 실행되는지 확인!
+ss -nlt
+
+//tor 설치
+sudo apt install tor
+
+//ssh를 꺼도 돌아가게끔
+// screen 생성
+screen
+// 현제 돌아가는 screen 표시
+screen -ls
+// screen 병합
+screen -r
+// screen 죽이기
+screen -XS session# quit
+//screen 나가기
+ctrl + d
+
+//url endpoint
+http://ec2-18-221-111-1.us-east-2.compute.amazonaws.com:3000/recieve-info?search=
