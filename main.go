@@ -16,7 +16,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/dohyung97022/mysqlfunc"
 	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
@@ -49,6 +48,7 @@ func main() {
 	err := msqlf.Init("dohyung97022", "9347314da!", "adiy-db.cxdzwqqcqoib.us-east-1.rds.amazonaws.com", 3306, "adiy")
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
 		return
 	}
 	fmt.Println("server is up and running")
@@ -64,60 +64,40 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}()
 
 	// ----------------- parameters -----------------
-	params, ok := r.URL.Query()["search"]
-	if !ok || params[0] == "" {
+	var b strings.Builder
+	search := queryOrDefaultStr("search", "", r)
+	if search == "" {
 		log.Println("Url Param 'search' is missing")
 		fmt.Fprintf(w, "You are missing the 'search' param!\n")
 		return
 	}
-	search := params[0]
-	// avMax := queryIntDefaultZero("avmax", r)
-	// avMin := queryIntDefaultZero("avmin", r)
-	// sbMax := queryIntDefaultZero("sbmax", r)
-	// sbMin := queryIntDefaultZero("sbmin", r)
-	// tvMax := queryIntDefaultZero("tvmin", r)
-	// tvMin := queryIntDefaultZero("tvmax", r)
 
 	// ----------------- need scraping? -----------------
 	v, err := msqlf.GetDataOfWhere("search", []string{"last_update", "srch_id"},
 		[]msqlf.Where{msqlf.Where{A: "query", IS: "=", B: search}})
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
 		return
 	}
 	// varify needRef and sechID before scraping
 	needRef := false
-	srchID := -1
+	var srchID int
 	if len(v) == 0 {
 		// search table has no data of query
 		needRef = true
-		var b strings.Builder
-		b.WriteString("INSERT INTO search(query, last_update) VALUES")
-		b.WriteString("(")
+		b.WriteString(aryWriter("INSERT INTO search(query, last_update) VALUES('", search, "','", startTime.Format("2006-01-02 15:04:05"), "'); SELECT last_insert_id();"))
 
-		b.WriteString("'")
-		b.WriteString(search)
-		b.WriteString("'")
-		b.WriteString(",")
-
-		b.WriteString("'")
-		b.WriteString(startTime.Format("2006-01-02 15:04:05"))
-		b.WriteString("'")
-
-		b.WriteString(")")
-		b.WriteString(";")
-		b.WriteString(" ")
-
-		b.WriteString("SELECT last_insert_id();")
-
-		v, err := mysqlfunc.GetQuery(b.String())
+		v, err := msqlf.GetQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
 			return
 		}
 		srchID, err = strconv.Atoi(v[0]["last_insert_id()"].(string))
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
 			return
 		}
 
@@ -126,6 +106,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		t, err := time.Parse("2006-01-02 15:04:05", v[0]["last_update"].(string))
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
 			return
 		}
 		// outdated, but has search data
@@ -138,129 +119,112 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	intInfo := make(map[int]info)
 	// channelBools := make(map[string]bool)
 	if needRef {
+		// scrape, put or update data accordingly.
 		_, intInfo, err = scrape(search)
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
 			return
 		}
-
-		var b strings.Builder
-		b.WriteString("INSERT INTO channels(channel, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
-		for i, info := range intInfo {
-
-			b.WriteString("(")
-
-			b.WriteString("'")
-			b.WriteString(info.Channel)
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(info.ChanURL)
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(startTime.Format("2006-01-02 15:04:05"))
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(info.ChanImg)
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(strconv.Itoa(info.AvrViews))
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(strconv.Itoa(info.TTLViews))
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(strconv.Itoa(info.Subs))
-			b.WriteString("'")
-			b.WriteString(",")
-
-			b.WriteString("'")
-			b.WriteString(strings.ReplaceAll(info.About, "'", "`"))
-			b.WriteString("'")
-
-			b.WriteString(")")
-
-			if i == len(intInfo)-1 {
-				b.WriteString(";")
-				break
-			}
-			b.WriteString(",")
-		}
-		b.WriteString(" ON DUPLICATE KEY UPDATE")
-		err := mysqlfunc.ExecQuery(b.String())
-		if err != nil {
-			fmt.Printf("error : %v\n", err)
-			return
-		}
-
+		// put data
 		b.Reset()
-		b.WriteString("INSERT IGNORE INTO search_channels(srch_id, chan_id) VALUES")
-		fmt.Printf("len(intInfo) : %v\n", len(intInfo))
-		for i, info := range intInfo {
-			fmt.Printf("i : %v\n", i)
-			b.WriteString("(")
-			b.WriteString(strconv.Itoa(srchID))
+		b.WriteString("INSERT INTO channels(channel, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
+		i := 1
+		for _, info := range intInfo {
+			b.WriteString(aryWriter("('", info.Channel, "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
+				info.ChanImg, "','", strconv.Itoa(info.AvrViews), "','", strconv.Itoa(info.TTLViews), "','", strconv.Itoa(info.Subs),
+				"','", strings.ReplaceAll(info.About, "'", "`"), "')"))
+			if i == len(intInfo) {
+				break
+			}
 			b.WriteString(",")
-			b.WriteString("'")
-			b.WriteString(info.Channel)
-			b.WriteString("'")
-			b.WriteString(")")
-			if i == len(intInfo)-1 {
+			i++
+		}
+		// update data
+		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
+		err := msqlf.ExecQuery(b.String())
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
+			return
+		}
+		// make one to many relations with srch_id
+		b.Reset()
+		b.WriteString("INSERT IGNORE INTO search_channels(srch_id, channel) VALUES")
+		i = 1
+		for _, info := range intInfo {
+			b.WriteString(aryWriter("(", strconv.Itoa(srchID), ",'", info.Channel, "')"))
+			if i == len(intInfo) {
 				b.WriteString(";")
 				break
 			}
 			b.WriteString(",")
+			i++
 		}
-		err = mysqlfunc.ExecQuery(b.String())
+		err = msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
 			return
 		}
 	} else {
+		//data exists. and is not outdated.
 	}
-	type info struct {
-		ChanURL    string
-		Channel    string
-		Title      string
-		ChanImg    string
-		About      string
-		Subs       int
-		Views      int
-		AvrViews   int
-		UploadTime string
-		Links      map[string]string
-		Script     string
+	//fetch data. Checks conditions
+	avMin := queryOrDefaultStr("avmin", "", r)
+	avMax := queryOrDefaultStr("avmax", "", r)
+	sbMin := queryOrDefaultStr("sbmin", "", r)
+	sbMax := queryOrDefaultStr("sbmax", "", r)
+	b.Reset()
+	b.WriteString(aryWriter("SELECT * FROM channels_views WHERE query = '", search, "' "))
+	if avMin != "" {
+		b.WriteString(aryWriter("AND avr_views >= '", avMin, "' "))
 	}
+	if avMax != "" {
+		b.WriteString(aryWriter("AND avr_views <= '", avMax, "' "))
+	}
+	if sbMin != "" {
+		b.WriteString(aryWriter("AND subs >= '", sbMin, "' "))
+	}
+	if sbMax != "" {
+		b.WriteString(aryWriter("AND subs <= '", sbMax, "' "))
+	}
+	//seting limit by page query. if page = "" {page = 1}
+	pageInt, err := strconv.Atoi(queryOrDefaultStr("page", "1", r))
+	pageAmount := 20
+	if err != nil {
+		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
+		return
+	}
+	b.WriteString(aryWriter("LIMIT ", strconv.Itoa((pageInt-1)*pageAmount), ", ", strconv.Itoa(pageAmount), " "))
+
+	b.WriteString("")
+	v, err = msqlf.GetQuery(b.String())
+	if err != nil {
+		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
+		return
+	}
+	bodyJSON, err := json.Marshal(v)
+	if err != nil {
+		fmt.Printf("error :%v\n", err)
+		logger.Println(err.Error())
+		return
+	}
+	fmt.Fprintf(w, "%s", bodyJSON)
 
 	//데이터가 존재했었다. 이전의 업데이트가 부족한 체널들 scrape
 	// if srchID != -1 {
 	// 	go scrapeOutdated(search, channelBools, intInfo)
 	// }
-
-	// checking if search data is outdated
-
 }
-func queryIntDefaultZero(query string, r *http.Request) int {
+func queryOrDefaultStr(query string, def string, r *http.Request) string {
 	params, ok := r.URL.Query()[query]
 	if !ok || len(params) == 0 {
-		return 0
+		return def
 	}
-	value, err := strconv.Atoi(params[0])
-	if err != nil {
-		return 0
-	}
-	return value
+	return params[0]
 }
 
 // --------------------------------- scrape functions --------------------------------------
@@ -377,6 +341,7 @@ func scrape(search string) (stringBoolChannels map[string]bool, intInfo map[int]
 // 		}
 // 	}
 // }
+
 func findChannelsHandler(urlScript map[string]string) (foundUrls map[string]bool) {
 	foundUrls = make(map[string]bool)
 	chUrls := make(chan []string)
@@ -704,6 +669,13 @@ func after(value string, a string) string {
 		return ""
 	}
 	return value[adjustedPos:len(value)]
+}
+func aryWriter(strAry ...string) string {
+	var b strings.Builder
+	for _, str := range strAry {
+		b.WriteString(str)
+	}
+	return b.String()
 }
 func before(value string, a string) string {
 	pos := strings.Index(value, a)
