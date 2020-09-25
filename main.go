@@ -231,27 +231,14 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 func scrape(search string) (stringBoolChannels map[string]bool, intInfo map[int]info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
-	urlsArray := []string{
-		"https://www.youtube.com/results?search_query=" + search,
-		"https://www.youtube.com/results?page=2&search_query=" + search,
-		"https://www.youtube.com/results?page=3&search_query=" + search,
-		"https://www.youtube.com/results?page=4&search_query=" + search,
-		"https://www.youtube.com/results?page=5&search_query=" + search,
-		"https://www.youtube.com/results?page=6&search_query=" + search,
-		"https://www.youtube.com/results?page=7&search_query=" + search,
-		"https://www.youtube.com/results?page=8&search_query=" + search,
-		"https://www.youtube.com/results?page=9&search_query=" + search,
-		"https://www.youtube.com/results?page=10&search_query=" + search,
-		"https://www.youtube.com/results?page=11&search_query=" + search,
-		"https://www.youtube.com/results?page=12&search_query=" + search,
-		"https://www.youtube.com/results?page=13&search_query=" + search,
-		"https://www.youtube.com/results?page=14&search_query=" + search,
-		"https://www.youtube.com/results?page=15&search_query=" + search,
-		"https://www.youtube.com/results?page=16&search_query=" + search,
-		"https://www.youtube.com/results?page=17&search_query=" + search,
-		"https://www.youtube.com/results?page=18&search_query=" + search,
-		"https://www.youtube.com/results?page=19&search_query=" + search,
-		"https://www.youtube.com/results?page=20&search_query=" + search}
+	var urlsArray []string
+	searchAmount := 20
+	for c := 1; c <= searchAmount; c++ {
+		if c == 1 {
+			urlsArray = append(urlsArray, "https://www.youtube.com/results?search_query="+search)
+		}
+		urlsArray = append(urlsArray, "https://www.youtube.com/results?page="+strconv.Itoa(c)+"&search_query="+search)
+	}
 
 	URLStringScript := callScraperHandler(urlsArray, "ioutil")
 	stringBoolChannels = findChannelsHandler(URLStringScript)
