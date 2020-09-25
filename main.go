@@ -16,6 +16,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/dohyung97022/mysqlfunc"
 	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
@@ -84,12 +85,42 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Printf("error : %v\n", err)
 		return
 	}
-
+	// varify needRef and sechID before scraping
 	needRef := false
-	// srchID := -1
+	srchID := -1
 	if len(v) == 0 {
 		// search table has no data of query
 		needRef = true
+		var b strings.Builder
+		b.WriteString("INSERT INTO search(query, last_update) VALUES")
+		b.WriteString("(")
+
+		b.WriteString("'")
+		b.WriteString(search)
+		b.WriteString("'")
+		b.WriteString(",")
+
+		b.WriteString("'")
+		b.WriteString(startTime.Format("2006-01-02 15:04:05"))
+		b.WriteString("'")
+
+		b.WriteString(")")
+		b.WriteString(";")
+		b.WriteString(" ")
+
+		b.WriteString("SELECT last_insert_id();")
+
+		v, err := mysqlfunc.GetQuery(b.String())
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			return
+		}
+		srchID, err = strconv.Atoi(v[0]["last_insert_id()"].(string))
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			return
+		}
+
 	} else {
 		// search table has data of query
 		t, err := time.Parse("2006-01-02 15:04:05", v[0]["last_update"].(string))
@@ -100,7 +131,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// outdated, but has search data
 		if t.Before(startTime.AddDate(0, 0, -2)) {
 			needRef = true
-			// srchID = v[0]["srch_id"].(int)
+			srchID = v[0]["srch_id"].(int)
 		}
 	}
 
@@ -112,10 +143,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			fmt.Printf("error : %v\n", err)
 			return
 		}
+
 		var b strings.Builder
 		b.WriteString("INSERT INTO channels(channel, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
-		i := 0
-		for _, info := range intInfo {
+		for i, info := range intInfo {
 
 			b.WriteString("(")
 
@@ -160,22 +191,43 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 			b.WriteString(")")
 
-			fmt.Printf("i : %v\n", i)
-			if i == 4 {
+			if i == len(intInfo)-1 {
+				b.WriteString(";")
 				break
 			}
 			b.WriteString(",")
-			i++
+		}
+		b.WriteString(" ON DUPLICATE KEY UPDATE")
+		err := mysqlfunc.ExecQuery(b.String())
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			return
 		}
 
-		//  INSERT INTO test () VALUES (); SET @last_id = LAST_INSERT_ID(); INSERT INTO test2 (id) VALUES (@last_id);
-		// 여기에서 LAST_INSERT_ID는 insert 구문에서 처음으로 insert 된 id값을 return한다. 그럼으로 우리가 insert한 length를 알고 있다면
-		// 넣은 데이터의 모든 chan_id를 알 수 있다. LAST_INSERT_ID ~ LAST_INSERT_ID+len(intInfo) ? (추정)
-
-		fmt.Printf("b : %v\n", b.String())
-		fmt.Printf("len intInfo : %v\n", len(intInfo))
+		b.Reset()
+		b.WriteString("INSERT IGNORE INTO search_channels(srch_id, chan_id) VALUES")
+		fmt.Printf("len(intInfo) : %v\n", len(intInfo))
+		for i, info := range intInfo {
+			fmt.Printf("i : %v\n", i)
+			b.WriteString("(")
+			b.WriteString(strconv.Itoa(srchID))
+			b.WriteString(",")
+			b.WriteString("'")
+			b.WriteString(info.Channel)
+			b.WriteString("'")
+			b.WriteString(")")
+			if i == len(intInfo)-1 {
+				b.WriteString(";")
+				break
+			}
+			b.WriteString(",")
+		}
+		err = mysqlfunc.ExecQuery(b.String())
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			return
+		}
 	} else {
-		// get from search.
 	}
 	type info struct {
 		ChanURL    string
@@ -592,8 +644,8 @@ func callScraperHandler(urlArray []string, scrapeType string) (finalURLScripts m
 	finalURLScripts = make(map[string]string)
 	chanURLScripts := make(chan map[string]string)
 	chFinished := make(chan bool)
-
-	devider := 3
+	//devider가 작을수록 더 scraper가 많이 분산됩니다. devider는 lambda마다의 과부화
+	devider := 2
 	quotient, remainder := len(urlArray)/devider, len(urlArray)%devider
 	for i := 0; i < quotient; i++ {
 		go callScraper(urlArray[i*devider:((i+1)*devider)], scrapeType, chanURLScripts, chFinished)

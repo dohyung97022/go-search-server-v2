@@ -1,3 +1,11 @@
 Log2020/08/31 20:22:54 main.go:1206: subscriberStringToInt error from string 
 Log2020/08/31 20:22:54 main.go:1207: strconv.ParseFloat: parsing "": invalid syntax
 Log2020/08/31 20:27:27 main.go:1125: strconv.Atoi: parsing "": invalid syntax
+Log2020/09/25 07:36:10 main.go:572: Auto-generation has been detected
+Log2020/09/25 07:36:10 main.go:576: Auto-generation has been detected
+Log2020/09/25 07:36:10 main.go:572: Auto-generation has been detected
+Log2020/09/25 07:36:10 main.go:576: Auto-generation has been detected
+Log2020/09/25 07:59:01 main.go:594: Auto-generation has been detected
+Log2020/09/25 07:59:01 main.go:598: Auto-generation has been detected
+Log2020/09/25 07:59:01 main.go:594: Auto-generation has been detected
+Log2020/09/25 07:59:01 main.go:598: Auto-generation has been detected
