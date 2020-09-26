@@ -44,7 +44,6 @@ var (
 //http://ec2-54-161-234-228.compute-1.amazonaws.com:3000/search?search=
 // http://localhost:3000/search?search=
 func main() {
-	fmt.Printf("lambdaCountUID : %v\n", lambdaCountUID)
 	err := msqlf.Init("dohyung97022", "9347314da!", "adiy-db.cxdzwqqcqoib.us-east-1.rds.amazonaws.com", 3306, "adiy")
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
@@ -56,13 +55,15 @@ func main() {
 	log.Fatal(http.ListenAndServe(":3000", nil))
 }
 func handler(w http.ResponseWriter, r *http.Request) {
+	// ----------------- header -----------------
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Content-type", "application/json; charset=UTF-8")
 	// ----------------- execution time -----------------
 	fmt.Println("request on 3000 (search)")
 	startTime := time.Now()
 	defer func() {
 		fmt.Printf("Binomial took %v\n", time.Since(startTime))
 	}()
-
 	// ----------------- parameters -----------------
 	var b strings.Builder
 	search := queryOrDefaultStr("search", "", r)
@@ -128,10 +129,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 		// put data
 		b.Reset()
-		b.WriteString("INSERT INTO channels(channel, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
+		b.WriteString("INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
 		i := 1
 		for _, info := range intInfo {
-			b.WriteString(aryWriter("('", info.Channel, "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
+			b.WriteString(aryWriter("('", info.Channel, "','", info.Title, "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
 				info.ChanImg, "','", strconv.Itoa(info.AvrViews), "','", strconv.Itoa(info.TTLViews), "','", strconv.Itoa(info.Subs),
 				"','", strings.ReplaceAll(info.About, "'", "`"), "')"))
 			if i == len(intInfo) {
@@ -141,7 +142,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			i++
 		}
 		// update data
-		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
+		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
 		err := msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
@@ -212,7 +213,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		logger.Println(err.Error())
 		return
 	}
-	w.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Fprintf(w, "%s", bodyJSON)
 
 	//데이터가 존재했었다. 이전의 업데이트가 부족한 체널들 scrape
