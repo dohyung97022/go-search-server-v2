@@ -212,6 +212,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		logger.Println(err.Error())
 		return
 	}
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	fmt.Fprintf(w, "%s", bodyJSON)
 
 	//데이터가 존재했었다. 이전의 업데이트가 부족한 체널들 scrape
