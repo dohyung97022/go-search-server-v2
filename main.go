@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -127,6 +126,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				fmt.Printf("error : %v\n", err)
 				logger.Println(err.Error())
+				logger.Printf("error : SQL Query : %s", b.String())
 				return
 			}
 		}
@@ -147,7 +147,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		b.WriteString("INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
 		i := 1
 		for _, info := range intInfo {
-			b.WriteString(aryWriter("('", info.Channel, "','", info.Title, "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
+			b.WriteString(aryWriter("('", info.Channel, "','", strings.ReplaceAll(info.Title, "'", "`"), "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
 				info.ChanImg, "','", strconv.Itoa(info.AvrViews), "','", strconv.Itoa(info.TTLViews), "','", strconv.Itoa(info.Subs),
 				"','", strings.ReplaceAll(info.About, "'", "`"), "')"))
 			if i == len(intInfo) {
@@ -158,10 +158,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
+
 		err := msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
+			logger.Printf("error : SQL Query : %s", b.String())
 			return
 		}
 		// ----------------- one to many relations with srch_id -----------------
@@ -181,6 +183,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
+			logger.Printf("error : SQL Query : %s", b.String())
 			return
 		}
 	}
@@ -512,7 +515,6 @@ func findInfoHandler(urlScript map[string]string) (finalStringInfo map[string]in
 	return finalStringInfo
 }
 func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool) {
-	var err error
 	storeInfo := info{
 		ChanURL:    chanURL,
 		Channel:    between(chanURL, "https://www.youtube.com", "/about"),
@@ -581,13 +583,7 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 	subs = before(subs, "\"}")
 	subs = after(subs, "\":\"")
 	subs = strings.Replace(subs, "subscribers", "", 1)
-	storeInfo.Subs, err = subscriberStringToInt(subs)
-	if err != nil {
-		fmt.Printf("subscriberStringToInt error occured. Saving script to log. \n")
-		fmt.Printf("error: %v\n", err.Error())
-		logger.Printf("subscriberStringToInt error occured. Saving script to log. \n")
-		logger.Printf("Error from script : %v\n", s)
-	}
+	storeInfo.Subs = subscriberStringToInt(subs)
 	//links
 	linksPre := between(s, "primaryLinks\":", "channelMetadataRenderer")
 	linksArray := strings.Split(linksPre, "thumbnails")
@@ -801,9 +797,9 @@ func removeButFloat(from string) (returnFloat float64, err error) {
 	}
 	return resFloat, nil
 }
-func subscriberStringToInt(stringData string) (subsInt int, err error) {
+func subscriberStringToInt(stringData string) int {
 	if stringData == "" {
-		return 0, errors.New("error: Subscribers stringData is nill")
+		return 0
 	}
 	var multiplier float64 = 1
 	gotInt, err := removeButFloat(stringData)
@@ -812,7 +808,7 @@ func subscriberStringToInt(stringData string) (subsInt int, err error) {
 		fmt.Printf("error: %v\n", err.Error())
 		logger.Printf("subscriberStringToInt error from string %v\n", stringData)
 		logger.Println(err.Error())
-		return 0, err
+		return 0
 	}
 	if strings.Contains(stringData, "천") {
 		multiplier = 1000
@@ -833,7 +829,7 @@ func subscriberStringToInt(stringData string) (subsInt int, err error) {
 		multiplier = 1000000000
 	}
 	resInt := int(gotInt * multiplier)
-	return resInt, nil
+	return resInt
 }
 func timeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
