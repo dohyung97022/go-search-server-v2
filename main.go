@@ -113,7 +113,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// outdated, but has search data
 		if t.Before(startTime.AddDate(0, 0, -2)) {
 			needRef = true
-			srchID = v[0]["srch_id"].(int)
+			srchID, err = strconv.Atoi(v[0]["srch_id"].(string))
+			if err != nil {
+				fmt.Printf("error : %v\n", err)
+				logger.Println(err.Error())
+				return
+			}
 		}
 	}
 
