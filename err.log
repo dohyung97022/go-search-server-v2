@@ -10,3 +10,10 @@ Log2020/09/25 07:59:01 main.go:598: Auto-generation has been detected
 Log2020/09/25 07:59:01 main.go:594: Auto-generation has been detected
 Log2020/09/25 07:59:01 main.go:598: Auto-generation has been detected
 Log2020/10/13 18:04:55 main.go:154: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Crack UPSC CSE Hindi','https://www.youtube.com/channel/UC04e1vy95lGjggcYbwgbOf' at line 1
+Log2020/10/13 19:49:03 main.go:128: Error 1054: Unknown column 'employeeNumber' in 'where clause'
+Log2020/10/13 19:51:06 main.go:808: subscriberStringToInt error from string Watch the latest and greatest hits
+Log2020/10/13 19:51:06 main.go:809: strconv.ParseFloat: parsing "": invalid syntax
+Log2020/10/13 19:51:06 main.go:163: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S 4K GAMING WORLD','https://www.youtube.com/user/pemby66/about','2020-10-13 19:5' at line 1
+Log2020/10/13 19:53:37 main.go:808: subscriberStringToInt error from string Watch the latest and greatest hits
+Log2020/10/13 19:53:37 main.go:809: strconv.ParseFloat: parsing "": invalid syntax
+Log2020/10/13 19:53:38 main.go:163: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Ames Research Center','https://www.youtube.com/user/nasaames/about','2020-10-1' at line 1

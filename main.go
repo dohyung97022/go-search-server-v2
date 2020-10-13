@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -81,7 +82,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		logger.Println(err.Error())
 		return
 	}
-	// varify needRef and sechID before scraping
+	// ----------------- varify needRef and sechID -----------------
 	needRef := false
 	var srchID int
 	if len(v) == 0 {
@@ -103,17 +104,26 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 	} else {
-		// search table has data of query
+		// ----------------- search has data of query -----------------
 		t, err := time.Parse("2006-01-02 15:04:05", v[0]["last_update"].(string))
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
 			return
 		}
-		// outdated, but has search data
+		// ----------------- outdated -----------------
 		if t.Before(startTime.AddDate(0, 0, -2)) {
 			needRef = true
 			srchID, err = strconv.Atoi(v[0]["srch_id"].(string))
+			if err != nil {
+				fmt.Printf("error : %v\n", err)
+				logger.Println(err.Error())
+				return
+			}
+			// ----------------- update last_update -----------------
+			b.Reset()
+			b.WriteString(aryWriter("UPDATE search SET last_update = '", startTime.Format("2006-01-02 15:04:05"), "' WHERE srch_id = ", strconv.Itoa(srchID)))
+			err = msqlf.ExecQuery(b.String())
 			if err != nil {
 				fmt.Printf("error : %v\n", err)
 				logger.Println(err.Error())
@@ -125,14 +135,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	intInfo := make(map[int]info)
 	// channelBools := make(map[string]bool)
 	if needRef {
-		// scrape, put or update data accordingly.
+		// ----------------- scrape, put or update data -----------------
 		_, intInfo, err = scrape(search)
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
 			return
 		}
-		// put data
+		// ----------------- put data -----------------
 		b.Reset()
 		b.WriteString("INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
 		i := 1
@@ -146,7 +156,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			b.WriteString(",")
 			i++
 		}
-		// update data
+		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
 		err := msqlf.ExecQuery(b.String())
 		if err != nil {
@@ -154,7 +164,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			logger.Println(err.Error())
 			return
 		}
-		// make one to many relations with srch_id
+		// ----------------- one to many relations with srch_id -----------------
 		b.Reset()
 		b.WriteString("INSERT IGNORE INTO search_channels(srch_id, channel) VALUES")
 		i = 1
@@ -173,14 +183,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			logger.Println(err.Error())
 			return
 		}
-	} else {
-		//data exists. and is not outdated.
 	}
-	//fetch data. Checks conditions
+	// ----------------- Checks conditions -----------------
 	avMin := queryOrDefaultStr("avmin", "", r)
 	avMax := queryOrDefaultStr("avmax", "", r)
 	sbMin := queryOrDefaultStr("sbmin", "", r)
 	sbMax := queryOrDefaultStr("sbmax", "", r)
+	// ----------------- fetch data -----------------
 	b.Reset()
 	b.WriteString(aryWriter("SELECT * FROM channels_views WHERE query = '", search, "' "))
 	if avMin != "" {
@@ -204,8 +213,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	b.WriteString(aryWriter("LIMIT ", strconv.Itoa((pageInt-1)*pageAmount), ", ", strconv.Itoa(pageAmount), " "))
-
-	b.WriteString("")
 	v, err = msqlf.GetQuery(b.String())
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
@@ -220,7 +227,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Fprintf(w, "%s", bodyJSON)
 
-	//데이터가 존재했었다. 이전의 업데이트가 부족한 체널들 scrape
+	//데이터가 존재했었다. 이전의 업데이트가 부족한 체널들 scrape?
 	// if srchID != -1 {
 	// 	go scrapeOutdated(search, channelBools, intInfo)
 	// }
@@ -505,6 +512,7 @@ func findInfoHandler(urlScript map[string]string) (finalStringInfo map[string]in
 	return finalStringInfo
 }
 func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool) {
+	var err error
 	storeInfo := info{
 		ChanURL:    chanURL,
 		Channel:    between(chanURL, "https://www.youtube.com", "/about"),
@@ -573,7 +581,13 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 	subs = before(subs, "\"}")
 	subs = after(subs, "\":\"")
 	subs = strings.Replace(subs, "subscribers", "", 1)
-	storeInfo.Subs = subscriberStringToInt(subs)
+	storeInfo.Subs, err = subscriberStringToInt(subs)
+	if err != nil {
+		fmt.Printf("subscriberStringToInt error occured. Saving script to log. \n")
+		fmt.Printf("error: %v\n", err.Error())
+		logger.Printf("subscriberStringToInt error occured. Saving script to log. \n")
+		logger.Printf("Error from script : %v\n", s)
+	}
 	//links
 	linksPre := between(s, "primaryLinks\":", "channelMetadataRenderer")
 	linksArray := strings.Split(linksPre, "thumbnails")
@@ -689,9 +703,6 @@ func between(str string, start string, end string) (result string) {
 	}
 	return str[s : s+e]
 }
-func createNewError(name string, id int) error {
-	return fmt.Errorf("user %q (id %d) not found", name, id)
-}
 func createRandomFromRange(min int, max int) int {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(max-min) + min
@@ -790,9 +801,9 @@ func removeButFloat(from string) (returnFloat float64, err error) {
 	}
 	return resFloat, nil
 }
-func subscriberStringToInt(stringData string) int {
+func subscriberStringToInt(stringData string) (subsInt int, err error) {
 	if stringData == "" {
-		return 0
+		return 0, errors.New("error: Subscribers stringData is nill")
 	}
 	var multiplier float64 = 1
 	gotInt, err := removeButFloat(stringData)
@@ -801,7 +812,7 @@ func subscriberStringToInt(stringData string) int {
 		fmt.Printf("error: %v\n", err.Error())
 		logger.Printf("subscriberStringToInt error from string %v\n", stringData)
 		logger.Println(err.Error())
-		return 0
+		return 0, err
 	}
 	if strings.Contains(stringData, "천") {
 		multiplier = 1000
@@ -822,7 +833,7 @@ func subscriberStringToInt(stringData string) int {
 		multiplier = 1000000000
 	}
 	resInt := int(gotInt * multiplier)
-	return resInt
+	return resInt, nil
 }
 func timeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
