@@ -64,7 +64,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	defer func() {
 		fmt.Printf("Binomial took %v\n", time.Since(startTime))
 	}()
-	// ----------------- parameters -----------------
+	// ----------------- search parameters -----------------
 	var b strings.Builder
 	search := queryOrDefaultStr("search", "", r)
 	if search == "" {
@@ -187,7 +187,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	// ----------------- Checks conditions -----------------
+	// ----------------- condition parameters -----------------
 	avMin := queryOrDefaultStr("avmin", "", r)
 	avMax := queryOrDefaultStr("avmax", "", r)
 	sbMin := queryOrDefaultStr("sbmin", "", r)
@@ -207,15 +207,19 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if sbMax != "" {
 		b.WriteString(aryWriter("AND subs <= '", sbMax, "' "))
 	}
-	//seting limit by page query. if page = "" {page = 1}
+	// ----------------- page parameter -----------------
 	pageInt, err := strconv.Atoi(queryOrDefaultStr("page", "1", r))
-	pageAmount := 20
+	amountInPage := 20
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())
 		return
 	}
-	b.WriteString(aryWriter("LIMIT ", strconv.Itoa((pageInt-1)*pageAmount), ", ", strconv.Itoa(pageAmount), " "))
+	// ----------------- getallpage parameter -----------------
+	getAllPage := queryOrDefaultStr("getallpage", "", r)
+	if getAllPage != "true" {
+		b.WriteString(aryWriter("LIMIT ", strconv.Itoa((pageInt-1)*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
+	}
 	v, err = msqlf.GetQuery(b.String())
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
