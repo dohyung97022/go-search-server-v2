@@ -143,7 +143,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		// ----------------- put contacts -----------------
-		// contacts를 저장 후 last_insert_id() 를 받은 갯수만큼
+		// contacts를 저장 후 last_insert_id() 를 저장 갯수만큼
 		// 1을 더해나가면서 뒤의 put data의 contact_id에 저장
 		// ----------------- put data -----------------
 		b.Reset()
