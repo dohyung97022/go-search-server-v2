@@ -148,16 +148,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// ----------------- put data -----------------
 		b.Reset()
 		b.WriteString("INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
-		i := 1
-		for _, info := range intInfo {
+		for i, info := range intInfo {
 			b.WriteString(aryWriter("('", info.Channel, "','", strings.ReplaceAll(info.Title, "'", "`"), "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
 				info.ChanImg, "','", strconv.Itoa(info.AvrViews), "','", strconv.Itoa(info.TTLViews), "','", strconv.Itoa(info.Subs),
 				"','", strings.ReplaceAll(info.About, "'", "`"), "')"))
-			if i == len(intInfo) {
+			if i+1 == len(intInfo) {
 				break
 			}
 			b.WriteString(",")
-			i++
 		}
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
@@ -172,15 +170,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// ----------------- one to many relations with srch_id -----------------
 		b.Reset()
 		b.WriteString("INSERT IGNORE INTO search_channels(srch_id, channel) VALUES")
-		i = 1
-		for _, info := range intInfo {
+		for i, info := range intInfo {
 			b.WriteString(aryWriter("(", strconv.Itoa(srchID), ",'", info.Channel, "')"))
-			if i == len(intInfo) {
+			if i+1 == len(intInfo) {
 				b.WriteString(";")
 				break
 			}
 			b.WriteString(",")
-			i++
 		}
 		err = msqlf.ExecQuery(b.String())
 		if err != nil {
