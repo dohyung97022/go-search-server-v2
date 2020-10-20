@@ -142,16 +142,21 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			logger.Println(err.Error())
 			return
 		}
-		// ----------------- put contacts -----------------
-		// contacts를 저장 후 last_insert_id() 를 저장 갯수만큼
-		// 1을 더해나가면서 뒤의 put data의 contact_id에 저장
+
 		// ----------------- put data -----------------
 		b.Reset()
 		b.WriteString("INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
 		for i, info := range intInfo {
-			b.WriteString(aryWriter("('", info.Channel, "','", strings.ReplaceAll(info.Title, "'", "`"), "','", info.ChanURL, "','", startTime.Format("2006-01-02 15:04:05"), "','",
-				info.ChanImg, "','", strconv.Itoa(info.AvrViews), "','", strconv.Itoa(info.TTLViews), "','", strconv.Itoa(info.Subs),
-				"','", strings.ReplaceAll(info.About, "'", "`"), "')"))
+			b.WriteString(aryWriter(
+				"('", info.Channel, "','",
+				strings.ReplaceAll(info.Title, "'", "`"), "','",
+				info.ChanURL, "','",
+				startTime.Format("2006-01-02 15:04:05"), "','",
+				info.ChanImg, "','",
+				strconv.Itoa(info.AvrViews), "','",
+				strconv.Itoa(info.TTLViews), "','",
+				strconv.Itoa(info.Subs), "','",
+				strings.ReplaceAll(info.About, "'", "`"), "')"))
 			if i+1 == len(intInfo) {
 				break
 			}
@@ -159,8 +164,46 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
+		err = msqlf.ExecQuery(b.String())
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
+			logger.Printf("error : SQL Query : %s", b.String())
+			return
+		}
 
-		err := msqlf.ExecQuery(b.String())
+		// ----------------- put contacts -----------------
+		// channel 명으로 이동하기로 결정?
+		// 이제 이메일을 그냥 backend에서 받는 것으로? findEmailFromString()?
+		b.Reset()
+		b.WriteString("INSERT INTO contacts(channel, facebook, facebook_group, facebook_page, twitch, instagram, twitter, email) VALUES")
+		for i, info := range intInfo {
+			// FacebookGroup
+			b.WriteString(aryWriter(
+				"('", info.Channel, "','",
+				info.Links["Facebook"], "','",
+				info.Links["FacebookGroup"], "','",
+				info.Links["FacebookPage"], "','",
+				info.Links["Twitch"], "','",
+				info.Links["Instagram"], "','",
+				info.Links["Twitter"], "','",
+				info.Links["Email"], "')"))
+			if i+1 == len(intInfo) {
+				break
+			}
+			b.WriteString(",")
+		}
+		// ----------------- update contacts -----------------
+		// how would I update if null or '' on multiple values?
+
+		// 	update test_update
+		// set A = (case when A is not null then 'A' end),
+		//     B = (case when B is not null then 'B' end),
+		//     C = (case when C is not null then 'C' end)
+		//  where A is not null or B is not null or C is not null;
+
+		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE facebook=dpc.facebook, facebook_group=dpc.facebook_group, facebook_page=dpc.facebook_page, twitch=dpc.twitch, instagram=dpc.instagram, twitter=dpc.twitter, email=dpc.email;")
+		err = msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
