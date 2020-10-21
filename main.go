@@ -194,15 +194,17 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			b.WriteString(",")
 		}
 		// ----------------- update contacts -----------------
-		// how would I update if null or '' on multiple values?
+		// 해결책
+		// AS dpc ON DUPLICATE KEY UPDATE facebook = (CASE WHEN dpc.facebook='' THEN contacts.facebook ELSE dpc.facebook END)
 
-		// 	update test_update
-		// set A = (case when A is not null then 'A' end),
-		//     B = (case when B is not null then 'B' end),
-		//     C = (case when C is not null then 'C' end)
-		//  where A is not null or B is not null or C is not null;
-
-		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE facebook=dpc.facebook, facebook_group=dpc.facebook_group, facebook_page=dpc.facebook_page, twitch=dpc.twitch, instagram=dpc.instagram, twitter=dpc.twitter, email=dpc.email;")
+		b.WriteString(` AS dpc ON DUPLICATE KEY UPDATE 
+		facebook=(case when facebook is not null then dpc.facebook end),
+		 facebook_group=(case when facebook_group is not null then dpc.facebook_group end),
+		  facebook_page=(case when facebook_page is not null then dpc.facebook_page end),
+		   twitch=(case when twitch is not null then dpc.twitch end),
+			instagram=(case when instagram is not null then dpc.instagram end),
+			 twitter=(case when twitter is not null then dpc.twitter end),
+			  email=(case when email is not null then dpc.email end);`)
 		err = msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
@@ -337,58 +339,6 @@ func scrape(search string) (stringBoolChannels map[string]bool, intInfo map[int]
 }
 
 // func scrapeOutdated(search string, channelBools map[string]bool, intInfo map[int]info) {
-// 	start := time.Now()
-// 	// 1. 이미 등록되었는데 검색되지 않은 체널 확인
-// 	needRefChan, err := getFbSearchRelChansThatNeedsRefresh(search, time.Now().AddDate(0, 0, -1).UTC())
-// 	if err != nil {
-// 		fmt.Printf("error := %v\n", err.Error())
-// 		logger.Printf("error := %v\n", err.Error())
-// 	}
-// 	timeTrack(start, "getFbSearchRelChansThatNeedsRefresh")
-// 	start = time.Now()
-
-// 	var crawlResChans []string
-// 	for str := range channelBools {
-// 		crawlResChans = append(crawlResChans, str)
-// 	}
-// 	needRefChan = subtractStrArray(needRefChan, crawlResChans)
-
-// 	// 2. 체널 정보 받기
-// 	//이제는 스크레이프를 하고 받아야 한다.!
-// 	aboutUrlsArray := []string{}
-// 	for _, channel := range needRefChan {
-// 		aboutUrlsArray = append(aboutUrlsArray, "https://www.youtube.com"+channel+"/about")
-// 	}
-// 	videosUrlsArray := []string{}
-// 	for _, channel := range needRefChan {
-// 		videosUrlsArray = append(videosUrlsArray, "https://www.youtube.com"+channel+"/videos")
-// 	}
-// 	chAbout := make(chan map[string]string)
-// 	chVideos := make(chan map[string]string)
-// 	go func() { chAbout <- callScraperHandler(aboutUrlsArray, "goquery") }()
-// 	go func() { chVideos <- callScraperHandler(videosUrlsArray, "goquery") }()
-
-// 	URLScriptAbout := <-chAbout
-// 	URLScriptVideos := <-chVideos
-
-// 	chanInfo := findInfoHandler(URLScriptAbout)
-// 	chanVideosInfo := findVideosInfoHandler(URLScriptVideos)
-
-// 	i := 0
-// 	for url, info := range chanInfo {
-// 		info.AvrViews = chanVideosInfo[url].AvrViews
-// 		info.UploadTime = chanVideosInfo[url].UploadTime
-// 		intInfo[len(intInfo)+i] = info
-// 		i++
-// 	}
-// 	errAry := saveFbChanData(search, intInfo)
-// 	timeTrack(start, "saveFbChanData")
-// 	if len(errAry) != 0 {
-// 		for _, err := range errAry {
-// 			fmt.Printf("error := %v\n", err.Error())
-// 			logger.Printf("error := %v\n", err.Error())
-// 		}
-// 	}
 // }
 
 func findChannelsHandler(urlScript map[string]string) (foundUrls map[string]bool) {
@@ -578,6 +528,7 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 			"Twitch":        "",
 			"Instagram":     "",
 			"Twitter":       "",
+			"Email":         "",
 		},
 		Script: "",
 	}
@@ -624,6 +575,8 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 	abouts := after(s, "\"channelMetadataRenderer\":{\"title\":\"")
 	abouts = between(abouts, "description\":\"", "\",\"")
 	storeInfo.About += abouts
+	//email
+	storeInfo.Links["Email"] = getEmail(abouts)
 	//subs
 	subs := after(s, "subscriberCountText")
 	subs = before(subs, "\"}")
@@ -795,6 +748,11 @@ func checkForSocial(value string) (string, bool) {
 		return "Twitter", true
 	}
 	return "", false
+}
+func getEmail(text string) string {
+	re := regexp.MustCompile(`[a-zA-Z0-9]+@[a-zA-Z0-9\.]+\.[a-zA-Z0-9]+`)
+	match := re.FindString(text)
+	return match
 }
 func isWithinYear(stringData string) bool {
 	if strings.Contains(stringData, "day") {
