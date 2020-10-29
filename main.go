@@ -132,11 +132,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	intInfo := make(map[int]info)
 	// channelBools := make(map[string]bool)
 	if needRef {
 		// ----------------- scrape, put or update data -----------------
-		_, intInfo, err = scrape(search)
+		_, intInfo, err := scrape(search)
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -164,6 +163,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
+		logger.Printf("Put and update SQL Query : %s", b.String())
+
+		// ----------------- exec query -----------------
 		err = msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
@@ -194,17 +196,18 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			b.WriteString(",")
 		}
 		// ----------------- update contacts -----------------
-		// 해결책
+		// 해결책 적용 완료
 		// AS dpc ON DUPLICATE KEY UPDATE facebook = (CASE WHEN dpc.facebook='' THEN contacts.facebook ELSE dpc.facebook END)
-
 		b.WriteString(` AS dpc ON DUPLICATE KEY UPDATE 
-		facebook=(case when facebook is not null then dpc.facebook end),
-		 facebook_group=(case when facebook_group is not null then dpc.facebook_group end),
-		  facebook_page=(case when facebook_page is not null then dpc.facebook_page end),
-		   twitch=(case when twitch is not null then dpc.twitch end),
-			instagram=(case when instagram is not null then dpc.instagram end),
-			 twitter=(case when twitter is not null then dpc.twitter end),
-			  email=(case when email is not null then dpc.email end);`)
+		facebook=(CASE WHEN dpc.facebook='' THEN contacts.facebook ELSE dpc.facebook END),
+		 facebook_group=(CASE WHEN dpc.facebook_group='' THEN contacts.facebook_group ELSE dpc.facebook_group END),
+		  facebook_page=(CASE WHEN dpc.facebook_page='' THEN contacts.facebook_page ELSE dpc.facebook_page END),
+		   twitch=(CASE WHEN dpc.twitch='' THEN contacts.twitch ELSE dpc.twitch END),
+			instagram=(CASE WHEN dpc.instagram='' THEN contacts.instagram ELSE dpc.instagram END),
+			 twitter=(CASE WHEN dpc.twitter='' THEN contacts.twitter ELSE dpc.twitter END),
+			  email=(CASE WHEN dpc.email='' THEN contacts.email ELSE dpc.email END);`)
+
+		// ----------------- exec query -----------------
 		err = msqlf.ExecQuery(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
@@ -292,7 +295,7 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 }
 
 // --------------------------------- scrape functions --------------------------------------
-func scrape(search string) (stringBoolChannels map[string]bool, intInfo map[int]info, err error) {
+func scrape(search string) (stringBoolChannels map[string]bool, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
 	var urlsArray []string
@@ -326,13 +329,10 @@ func scrape(search string) (stringBoolChannels map[string]bool, intInfo map[int]
 	chanInfo := findInfoHandler(URLScriptAbout)
 	chanVideosInfo := findVideosInfoHandler(URLScriptVideos)
 
-	i := 0
-	intInfo = make(map[int]info)
 	for url, info := range chanInfo {
 		info.AvrViews = chanVideosInfo[url].AvrViews
 		info.UploadTime = chanVideosInfo[url].UploadTime
-		intInfo[i] = info
-		i++
+		intInfo = append(intInfo, info)
 	}
 
 	return stringBoolChannels, intInfo, nil
