@@ -163,7 +163,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
-		logger.Printf("Put and update SQL Query : %s", b.String())
 
 		// ----------------- exec query -----------------
 		err = msqlf.ExecQuery(b.String())
@@ -298,17 +297,8 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 func scrape(search string) (stringBoolChannels map[string]bool, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
-	var urlsArray []string
-	searchAmount := 20
-	for c := 1; c <= searchAmount; c++ {
-		if c == 1 {
-			urlsArray = append(urlsArray, "https://www.youtube.com/results?search_query="+search)
-		}
-		urlsArray = append(urlsArray, "https://www.youtube.com/results?page="+strconv.Itoa(c)+"&search_query="+search)
-	}
 
-	URLStringScript := callScraperHandler(urlsArray, "ioutil")
-	stringBoolChannels = findChannelsHandler(URLStringScript)
+	//youtube api로 대체....
 
 	aboutUrlsArray := []string{}
 	for channel := range stringBoolChannels {
@@ -325,6 +315,8 @@ func scrape(search string) (stringBoolChannels map[string]bool, intInfo []info, 
 
 	URLScriptAbout := <-chAbout
 	URLScriptVideos := <-chVideos
+
+	logger.Printf("Url length : %v", len(URLScriptAbout))
 
 	chanInfo := findInfoHandler(URLScriptAbout)
 	chanVideosInfo := findVideosInfoHandler(URLScriptVideos)
@@ -394,6 +386,16 @@ func findChannels(s string, ch chan []string, chFinished chan bool) {
 			}
 		}
 	}
+
+	logger.Printf("Found channels amount is : %v\n", len(channels))
+	logger.Printf("Found channels are : %v\n", channels)
+	logger.Printf("\n\n")
+
+	if len(channels) == 0 {
+		fmt.Printf("error : No channels are found in search scrape. Check log for more info.")
+		logger.Printf("No channels are found in : %v\n", s)
+	}
+
 	defer func() {
 		ch <- channels
 		chFinished <- true
