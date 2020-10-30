@@ -330,76 +330,24 @@ func scrape(search string) (stringBoolChannels map[string]bool, intInfo []info, 
 	return stringBoolChannels, intInfo, nil
 }
 
-// func scrapeOutdated(search string, channelBools map[string]bool, intInfo map[int]info) {
-// }
+func getYoutubeAPIChannels(search string, APIkey string) (youtubeChannels []string, err error) {
+	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&q=" + search + "&key=" + APIkey)
+	if err != nil {
+		log.Fatal(err)
+		return nil, err
+	}
+	defer response.Body.Close()
+	body, _ := ioutil.ReadAll(response.Body)
+	ytbAPIResStrStr := make(map[string][]interface{})
+	json.Unmarshal(body, &ytbAPIResStrStr)
 
-func findChannelsHandler(urlScript map[string]string) (foundUrls map[string]bool) {
-	foundUrls = make(map[string]bool)
-	chUrls := make(chan []string)
-	chFinished := make(chan bool)
-
-	for _, s := range urlScript {
-		go findChannels(s, chUrls, chFinished)
+	//----------json 의 [items][id][channelId]----------
+	for _, i := range ytbAPIResStrStr["items"] {
+		items := i.(map[string]interface{})
+		id := items["id"].(map[string]interface{})
+		youtubeChannels = append(youtubeChannels, id["channelId"].(string))
 	}
-	for c := 0; c < len(urlScript); {
-		select {
-		case url := <-chUrls:
-			for i := range url {
-				foundUrls[url[i]] = true
-			}
-		case <-chFinished:
-			c++
-		}
-	}
-	return foundUrls
-}
-func findChannels(s string, ch chan []string, chFinished chan bool) {
-	var channels []string
-	// capcha type 1
-	if between(string(s), "<script>", "</script>") ==
-		"var submitCallback = function(response) {document.getElementById('captcha-form').submit();};" {
-		logger.Printf("Capcha has been detected. (crawlVideo) type 1 \n")
-		fmt.Printf("error :%v\n", "Capcha has been detected. (crawlVideo) type 1")
-	}
-	// capcha type 2
-	if strings.Contains(between(s, "<script src", "script>"), "https://www.google.com/recaptcha/api.js") == true {
-		logger.Printf("Capcha has been detected. (crawlVideo) type 2\n")
-		fmt.Printf("error :%v\n", "Capcha has been detected. (crawlVideo) type 2")
-	}
-	// capcha type 3
-	if strings.Contains(between(s, "<script  src", "script>"), "https://www.google.com/recaptcha/api.js") == true {
-		logger.Printf("Capcha has been detected. (crawlVideo) type 3\n")
-		fmt.Printf("error :%v\n", "Capcha has been detected. (crawlVideo) type 3")
-	}
-	z := strings.Split(s, "\"commandMetadata\"")
-	for val := range z {
-		linkPre := between(z[val], "webCommandMetadata", "}")
-		linkPre = between(linkPre, "{\"url\":\"", "\"")
-		if strings.Index(linkPre, "/channel/") == 0 {
-			if !contains(channels, linkPre) {
-				channels = append(channels, linkPre)
-			}
-		}
-		if strings.Index(linkPre, "/user/") == 0 {
-			if !contains(channels, linkPre) {
-				channels = append(channels, linkPre)
-			}
-		}
-	}
-
-	logger.Printf("Found channels amount is : %v\n", len(channels))
-	logger.Printf("Found channels are : %v\n", channels)
-	logger.Printf("\n\n")
-
-	if len(channels) == 0 {
-		fmt.Printf("error : No channels are found in search scrape. Check log for more info.")
-		logger.Printf("No channels are found in : %v\n", s)
-	}
-
-	defer func() {
-		ch <- channels
-		chFinished <- true
-	}()
+	return youtubeChannels, nil
 }
 
 type videosInfo struct {
