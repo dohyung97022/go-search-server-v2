@@ -141,7 +141,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			logger.Println(err.Error())
 			return
 		}
-
 		// ----------------- put data -----------------
 		b.Reset()
 		b.WriteString("INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES")
@@ -163,7 +162,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
-
 		// ----------------- exec query -----------------
 		err = msqlf.ExecQuery(b.String())
 		if err != nil {
@@ -172,7 +170,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			logger.Printf("error : SQL Query : %s", b.String())
 			return
 		}
-
 		// ----------------- put contacts -----------------
 		b.Reset()
 		b.WriteString("INSERT INTO contacts(channel, facebook, facebook_group, facebook_page, twitch, instagram, twitter, email) VALUES")
@@ -290,19 +287,22 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 }
 
 // --------------------------------- scrape functions --------------------------------------
-func scrape(search string) (stringBoolChannels map[string]bool, intInfo []info, err error) {
+func scrape(search string) (channels []string, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
 
-	//youtube api로 대체....
-
+	//youtube api key를 kubernetes에서 공용으로 load balancing하는 방법을 고안하기
+	channels, err = getYoutubeAPIChannels(search, "AIzaSyDIc53xLxBg4W6etfMhzuf9nqdbmsqsKOc")
+	if err != nil {
+		return nil, nil, err
+	}
 	aboutUrlsArray := []string{}
-	for channel := range stringBoolChannels {
-		aboutUrlsArray = append(aboutUrlsArray, "https://www.youtube.com"+channel+"/about")
+	for _, channel := range channels {
+		aboutUrlsArray = append(aboutUrlsArray, "https://www.youtube.com/channel/"+channel+"/about")
 	}
 	videosUrlsArray := []string{}
-	for channel := range stringBoolChannels {
-		videosUrlsArray = append(videosUrlsArray, "https://www.youtube.com"+channel+"/videos")
+	for _, channel := range channels {
+		videosUrlsArray = append(videosUrlsArray, "https://www.youtube.com/channel/"+channel+"/videos")
 	}
 	chAbout := make(chan map[string]string)
 	chVideos := make(chan map[string]string)
@@ -323,7 +323,7 @@ func scrape(search string) (stringBoolChannels map[string]bool, intInfo []info, 
 		intInfo = append(intInfo, info)
 	}
 
-	return stringBoolChannels, intInfo, nil
+	return channels, intInfo, nil
 }
 
 func getYoutubeAPIChannels(search string, APIkey string) (youtubeChannels []string, err error) {
