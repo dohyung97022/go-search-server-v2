@@ -174,8 +174,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		// ----------------- put contacts -----------------
-		// channel 명으로 이동하기로 결정?
-		// 이제 이메일을 그냥 backend에서 받는 것으로? findEmailFromString()?
 		b.Reset()
 		b.WriteString("INSERT INTO contacts(channel, facebook, facebook_group, facebook_page, twitch, instagram, twitter, email) VALUES")
 		for i, info := range intInfo {
@@ -195,8 +193,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			b.WriteString(",")
 		}
 		// ----------------- update contacts -----------------
-		// 해결책 적용 완료
-		// AS dpc ON DUPLICATE KEY UPDATE facebook = (CASE WHEN dpc.facebook='' THEN contacts.facebook ELSE dpc.facebook END)
 		b.WriteString(` AS dpc ON DUPLICATE KEY UPDATE 
 		facebook=(CASE WHEN dpc.facebook='' THEN contacts.facebook ELSE dpc.facebook END),
 		 facebook_group=(CASE WHEN dpc.facebook_group='' THEN contacts.facebook_group ELSE dpc.facebook_group END),
