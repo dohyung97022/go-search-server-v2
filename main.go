@@ -292,10 +292,10 @@ func scrape(search string) (channels []string, intInfo []info, err error) {
 	search = strings.ReplaceAll(search, " ", "+")
 
 	//youtube api key를 kubernetes에서 공용으로 load balancing하는 방법을 고안하기
-	channels, err = getYoutubeAPIChannels(search, "AIzaSyDIc53xLxBg4W6etfMhzuf9nqdbmsqsKOc")
-	if err != nil {
-		return nil, nil, err
-	}
+	// channels, nextPageToken, err := getYoutubeAPIChannels(search, "AIzaSyDIc53xLxBg4W6etfMhzuf9nqdbmsqsKOc")
+	// if err != nil {
+	// 	return nil, nil, err
+	// }
 	aboutUrlsArray := []string{}
 	for _, channel := range channels {
 		aboutUrlsArray = append(aboutUrlsArray, "https://www.youtube.com/channel/"+channel+"/about")
@@ -326,24 +326,27 @@ func scrape(search string) (channels []string, intInfo []info, err error) {
 	return channels, intInfo, nil
 }
 
-func getYoutubeAPIChannels(search string, APIkey string) (youtubeChannels []string, err error) {
+func getYoutubeAPIChannels(search string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
 	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&q=" + search + "&key=" + APIkey)
 	if err != nil {
 		log.Fatal(err)
-		return nil, err
+		return nil, "", err
 	}
 	defer response.Body.Close()
 	body, _ := ioutil.ReadAll(response.Body)
-	ytbAPIResStrStr := make(map[string][]interface{})
+	//----------json 의 [nextPageToken]----------
+	ytbAPIResStrStr := make(map[string]string)
 	json.Unmarshal(body, &ytbAPIResStrStr)
-
+	nextPageToken = ytbAPIResStrStr["nextPageToken"]
 	//----------json 의 [items][id][channelId]----------
-	for _, i := range ytbAPIResStrStr["items"] {
+	ytbAPIResStrInterfAry := make(map[string][]interface{})
+	json.Unmarshal(body, &ytbAPIResStrInterfAry)
+	for _, i := range ytbAPIResStrInterfAry["items"] {
 		items := i.(map[string]interface{})
 		id := items["id"].(map[string]interface{})
 		youtubeChannels = append(youtubeChannels, id["channelId"].(string))
 	}
-	return youtubeChannels, nil
+	return youtubeChannels, nextPageToken, nil
 }
 
 type videosInfo struct {
