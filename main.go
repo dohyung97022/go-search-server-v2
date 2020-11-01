@@ -19,18 +19,10 @@ import (
 	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
-// --------------------------------- struct types --------------------------------------
-type callScraperStruct struct {
-	//ioutil or goquery
-	Type string
-	//urls to scrape
-	Urls []string
-}
-
 // --------------------------------- mutex var --------------------------------------
 
 var (
-	lambdaCountUID = createRandomFromRange(0, 200)
+	lambdaCountUID = getInt.randomFromRange(0, 200)
 	mutex          sync.Mutex
 )
 
@@ -286,6 +278,43 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 	return params[0]
 }
 
+// --------------------------------- Youtube API functions --------------------------------------
+func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
+	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
+	if err != nil {
+		log.Fatal(err)
+		return nil, "", err
+	}
+	defer response.Body.Close()
+	body, _ := ioutil.ReadAll(response.Body)
+	//----------json 의 [nextPageToken]----------
+	ytbAPIResStrStr := make(map[string]string)
+	json.Unmarshal(body, &ytbAPIResStrStr)
+	nextPageToken = ytbAPIResStrStr["nextPageToken"]
+	//----------json 의 [items][id][channelId]----------
+	ytbAPIResStrInterfAry := make(map[string][]interface{})
+	json.Unmarshal(body, &ytbAPIResStrInterfAry)
+	for _, i := range ytbAPIResStrInterfAry["items"] {
+		items := i.(map[string]interface{})
+		id := items["id"].(map[string]interface{})
+		youtubeChannels = append(youtubeChannels, id["channelId"].(string))
+	}
+	return youtubeChannels, nextPageToken, nil
+}
+
+func getYoutubeAPIChannelsHandler(search string, APIkeyArry []string) (youtubeChannelsMap map[string]bool) {
+	pageToken := ""
+	youtubeChannelsMap = make(map[string]bool)
+	for i := 0; i < 10; i++ {
+		youtubeChannels, newPageToken, _ := getYoutubeAPIChannels(search, pageToken, "AIzaSyAhJ3KSYWG84RbUBjwJErzdX6Zf_20SU2c")
+		pageToken = newPageToken
+		for _, youtubeChannel := range youtubeChannels {
+			youtubeChannelsMap[youtubeChannel] = true
+		}
+	}
+	return youtubeChannelsMap
+}
+
 // --------------------------------- scrape functions --------------------------------------
 func scrape(search string) (channels []string, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
@@ -326,29 +355,6 @@ func scrape(search string) (channels []string, intInfo []info, err error) {
 	return channels, intInfo, nil
 }
 
-func getYoutubeAPIChannels(search string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
-	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&q=" + search + "&key=" + APIkey)
-	if err != nil {
-		log.Fatal(err)
-		return nil, "", err
-	}
-	defer response.Body.Close()
-	body, _ := ioutil.ReadAll(response.Body)
-	//----------json 의 [nextPageToken]----------
-	ytbAPIResStrStr := make(map[string]string)
-	json.Unmarshal(body, &ytbAPIResStrStr)
-	nextPageToken = ytbAPIResStrStr["nextPageToken"]
-	//----------json 의 [items][id][channelId]----------
-	ytbAPIResStrInterfAry := make(map[string][]interface{})
-	json.Unmarshal(body, &ytbAPIResStrInterfAry)
-	for _, i := range ytbAPIResStrInterfAry["items"] {
-		items := i.(map[string]interface{})
-		id := items["id"].(map[string]interface{})
-		youtubeChannels = append(youtubeChannels, id["channelId"].(string))
-	}
-	return youtubeChannels, nextPageToken, nil
-}
-
 type videosInfo struct {
 	Channel    string
 	UploadTime string
@@ -375,20 +381,20 @@ func findVideosInfoHandler(urlScript map[string]string) (finalVideosInfo map[str
 }
 func findVideosInfo(url string, s string, chVideosInfo chan videosInfo, chFinished chan bool) {
 	storeVideosInfo := videosInfo{
-		Channel:    between(url, "https://www.youtube.com", "/videos"),
+		Channel:    getStr.between(url, "https://www.youtube.com", "/videos"),
 		UploadTime: "",
 		AvrViews:   0,
 	}
 	viewsArray := strings.Split(s, "shortViewCountText\":{\"simpleText\":\"")
 	// println(len(viewsArray))
 	for i := range viewsArray {
-		viewsArray[i] = before(viewsArray[i], "\"")
+		viewsArray[i] = getStr.before(viewsArray[i], "\"")
 	}
 
 	datesArray := strings.Split(s, "publishedTimeText\":{\"simpleText\":\"")
 	// println(len(datesArray))
 	for i := range datesArray {
-		datesArray[i] = before(datesArray[i], "\"")
+		datesArray[i] = getStr.before(datesArray[i], "\"")
 	}
 
 	// storeInfo.AvrViews = viewsArray[1]
@@ -405,8 +411,8 @@ func findVideosInfo(url string, s string, chVideosInfo chan videosInfo, chFinish
 	}
 	reg, _ := regexp.Compile("[^0-9.]+")
 	for c := 0; c < p; c++ {
-		if isWithinYear(datesArray[c]) == true {
-			m := checkViewsMultiplyer(viewsArray[c])
+		if check.strWithinYear(datesArray[c]) == true {
+			m := getFloat.fromViewUnitStr(viewsArray[c])
 			viewsArray[c] = reg.ReplaceAllString(viewsArray[c], "")
 			viewFloat, err := strconv.ParseFloat(viewsArray[c], 64)
 			viewInt := int(viewFloat * m)
@@ -462,7 +468,7 @@ func findInfoHandler(urlScript map[string]string) (finalStringInfo map[string]in
 func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool) {
 	storeInfo := info{
 		ChanURL:    chanURL,
-		Channel:    between(chanURL, "https://www.youtube.com", "/about"),
+		Channel:    getStr.between(chanURL, "https://www.youtube.com", "/about"),
 		Title:      "",
 		ChanImg:    "",
 		About:      "",
@@ -482,18 +488,18 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 		Script: "",
 	}
 	// capcha type 1
-	if between(string(s), "<script>", "</script>") ==
+	if getStr.between(string(s), "<script>", "</script>") ==
 		"var submitCallback = function(response) {document.getElementById('captcha-form').submit();};" {
 		logger.Printf("Capcha has been detected. (crawlVideo) type 1 \n")
 		fmt.Printf("error :%v\n", "Capcha has been detected. (crawlVideo) type 1")
 	}
 	// capcha type 2
-	if strings.Contains(between(s, "<script src", "script>"), "https://www.google.com/recaptcha/api.js") == true {
+	if strings.Contains(getStr.between(s, "<script src", "script>"), "https://www.google.com/recaptcha/api.js") == true {
 		logger.Printf("Capcha has been detected. (crawlVideo) type 2\n")
 		fmt.Printf("error :%v\n", "Capcha has been detected. (crawlVideo) type 2")
 	}
 	// capcha type 3
-	if strings.Contains(between(s, "<script  src", "script>"), "https://www.google.com/recaptcha/api.js") == true {
+	if strings.Contains(getStr.between(s, "<script  src", "script>"), "https://www.google.com/recaptcha/api.js") == true {
 		logger.Printf("Capcha has been detected. (crawlVideo) type 3\n")
 		fmt.Printf("error :%v\n", "Capcha has been detected. (crawlVideo) type 3")
 	}
@@ -512,47 +518,54 @@ func findInfo(chanURL string, s string, chanInfo chan info, chFinished chan bool
 	}
 
 	// title
-	title := between(s, "channelMetadataRenderer\":{\"title\":\"", "\"")
+	title := getStr.between(s, "channelMetadataRenderer\":{\"title\":\"", "\"")
 	storeInfo.Title += title
 	//channel img
-	img := between(s, "\"avatar\":{\"thumbnails\":[{\"url\":\"", "\"")
+	img := getStr.between(s, "\"avatar\":{\"thumbnails\":[{\"url\":\"", "\"")
 	storeInfo.ChanImg += img
 	// total views
-	views := between(s, "viewCountText", ",\"")
-	storeInfo.TTLViews += removeButNumber(views)
+	views := getStr.between(s, "viewCountText", ",\"")
+	storeInfo.TTLViews += getInt.fromStr(views)
 	// abouts
-	abouts := after(s, "\"channelMetadataRenderer\":{\"title\":\"")
-	abouts = between(abouts, "description\":\"", "\",\"")
+	abouts := getStr.after(s, "\"channelMetadataRenderer\":{\"title\":\"")
+	abouts = getStr.between(abouts, "description\":\"", "\",\"")
 	storeInfo.About += abouts
 	//email
-	storeInfo.Links["Email"] = getEmail(abouts)
+	storeInfo.Links["Email"] = getStr.email(abouts)
 	//subs
-	subs := after(s, "subscriberCountText")
-	subs = before(subs, "\"}")
-	subs = after(subs, "\":\"")
+	subs := getStr.after(s, "subscriberCountText")
+	subs = getStr.before(subs, "\"}")
+	subs = getStr.after(subs, "\":\"")
 	subs = strings.Replace(subs, "subscribers", "", 1)
-	storeInfo.Subs = subscriberStringToInt(subs)
+	storeInfo.Subs = getInt.fromSubscriberUnit(subs)
 	//links
-	linksPre := between(s, "primaryLinks\":", "channelMetadataRenderer")
+	linksPre := getStr.between(s, "primaryLinks\":", "channelMetadataRenderer")
 	linksArray := strings.Split(linksPre, "thumbnails")
 	for val := range linksArray {
-		link := after(linksArray[val], "urlEndpoint")
-		link = between(link, "q=", "\"")
+		link := getStr.after(linksArray[val], "urlEndpoint")
+		link = getStr.between(link, "q=", "\"")
 		if strings.Contains(link, "\\u0026") {
-			link = before(link, "\\u0026")
+			link = getStr.before(link, "\\u0026")
 		}
 		decodedValue, _ := url.PathUnescape(link)
 		if decodedValue != "" {
 			//links url title
-			title := between(linksArray[val], "title\":", "}}")
-			title = between(title, ":\"", "\"")
-			urlTitle, sucss := checkForSocial(decodedValue)
+			title := getStr.between(linksArray[val], "title\":", "}}")
+			title = getStr.between(title, ":\"", "\"")
+			foundSocial, sucss := check.SocialInStr(decodedValue)
 			if sucss {
-				storeInfo.Links[urlTitle] = decodedValue
+				storeInfo.Links[foundSocial] = decodedValue
 			}
 		}
 	}
 	return
+}
+
+type callScraperStruct struct {
+	//ioutil or goquery
+	Type string
+	//urls to scrape
+	Urls []string
 }
 
 func callScraperHandler(urlArray []string, scrapeType string) (finalURLScripts map[string]string) {
@@ -583,6 +596,7 @@ func callScraperHandler(urlArray []string, scrapeType string) (finalURLScripts m
 	timeTrack(start, "callScraperHandler")
 	return finalURLScripts
 }
+
 func callScraper(urls []string, callType string, chanURLScripts chan map[string]string, chFinished chan bool) {
 	bodyMap := callScraperStruct{
 		Type: callType,
@@ -609,75 +623,153 @@ func callScraper(urls []string, callType string, chanURLScripts chan map[string]
 }
 
 // --------------------------------- additional functions --------------------------------------
-func after(value string, a string) string {
-	// Get substring after a string.
-	pos := strings.LastIndex(value, a)
+type getStrStruct struct{}
+
+var getStr getStrStruct
+
+func (getStrStruct) after(value string, after string) string {
+	pos := strings.LastIndex(value, after)
 	if pos == -1 {
 		return ""
 	}
-	adjustedPos := pos + len(a)
+	adjustedPos := pos + len(after)
 	if adjustedPos >= len(value) {
 		return ""
 	}
 	return value[adjustedPos:len(value)]
 }
-func aryWriter(strAry ...string) string {
-	var b strings.Builder
-	for _, str := range strAry {
-		b.WriteString(str)
-	}
-	return b.String()
-}
-func before(value string, a string) string {
-	pos := strings.Index(value, a)
+func (getStrStruct) before(value string, before string) string {
+	pos := strings.Index(value, before)
 	if pos == -1 {
 		return ""
 	}
 	return value[0:pos]
 }
-func between(str string, start string, end string) (result string) {
-	s := strings.Index(str, start)
+func (getStrStruct) between(value string, start string, end string) string {
+	s := strings.Index(value, start)
 	if s == -1 {
-		return
+		return ""
 	}
 	s += len(start)
-	e := strings.Index(str[s:], end)
+	e := strings.Index(value[s:], end)
 	if e == -1 {
-		return
+		return ""
 	}
-	return str[s : s+e]
+	return value[s : s+e]
 }
-func createRandomFromRange(min int, max int) int {
+func (getStrStruct) email(value string) string {
+	re := regexp.MustCompile(`[a-zA-Z0-9]+@[a-zA-Z0-9\.]+\.[a-zA-Z0-9]+`)
+	email := re.FindString(value)
+	return email
+}
+
+type getIntStruct struct{}
+
+var getInt getIntStruct
+
+func (getIntStruct) randomFromRange(min int, max int) int {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(max-min) + min
 }
-func contains(arr []string, str string) bool {
-	for _, a := range arr {
-		if a == str {
+func (getIntStruct) fromStr(from string) int {
+	if from == "" {
+		return 0
+	}
+	reg, err := regexp.Compile("[^0-9]+")
+	if err != nil {
+		fmt.Printf("error: %v\n", err.Error())
+		logger.Println(err.Error())
+	}
+	processedInt, err := strconv.Atoi(reg.ReplaceAllString(from, ""))
+	if err != nil {
+		fmt.Printf("error: %v\n", err.Error())
+		logger.Println(err.Error())
+	}
+	return processedInt
+}
+func (getIntStruct) fromSubscriberUnit(subscriberUnit string) int {
+	if subscriberUnit == "" {
+		return 0
+	}
+	var multiplier float64 = 1
+	gotInt, err := getFloat.fromStr(subscriberUnit)
+	if err != nil {
+		fmt.Printf("subscriberStringToInt error from string %v\n", subscriberUnit)
+		fmt.Printf("error: %v\n", err.Error())
+		logger.Printf("subscriberStringToInt error from string %v\n", subscriberUnit)
+		logger.Println(err.Error())
+		return 0
+	}
+	if strings.Contains(subscriberUnit, "천") {
+		multiplier = 1000
+	}
+	if strings.Contains(subscriberUnit, "만") {
+		multiplier = 10000
+	}
+	if strings.Contains(subscriberUnit, "억") {
+		multiplier = 100000000
+	}
+	if strings.Contains(subscriberUnit, "K") {
+		multiplier = 1000
+	}
+	if strings.Contains(subscriberUnit, "M") {
+		multiplier = 1000000
+	}
+	if strings.Contains(subscriberUnit, "B") {
+		multiplier = 1000000000
+	}
+	resInt := int(gotInt * multiplier)
+	return resInt
+}
+
+type getFloatStruct struct{}
+
+var getFloat getFloatStruct
+
+func (getFloatStruct) fromViewUnitStr(viewUnit string) float64 {
+	if strings.Contains(viewUnit, "천") {
+		return 1000
+	}
+	if strings.Contains(viewUnit, "만") {
+		return 10000
+	}
+	if strings.Contains(viewUnit, "K") {
+		return 1000
+	}
+	if strings.Contains(viewUnit, "M") {
+		return 1000000
+	}
+	if strings.Contains(viewUnit, "B") {
+		return 1000000000
+	}
+	return 1
+}
+func (getFloatStruct) fromStr(from string) (float64, error) {
+	reg, err := regexp.Compile("[^0-9.]+")
+	if err != nil {
+		return 0, err
+	}
+	processedString := reg.ReplaceAllString(from, "")
+	resFloat, err := strconv.ParseFloat(processedString, 64)
+	if err != nil {
+		return 0, err
+	}
+	return resFloat, nil
+}
+
+type checkStruct struct{}
+
+var check checkStruct
+
+func (checkStruct) strArayContains(strArry []string, contains string) bool {
+	for _, a := range strArry {
+		if a == contains {
 			return true
 		}
 	}
 	return false
 }
-func checkViewsMultiplyer(stringData string) float64 {
-	if strings.Contains(stringData, "천") {
-		return 1000
-	}
-	if strings.Contains(stringData, "만") {
-		return 10000
-	}
-	if strings.Contains(stringData, "K") {
-		return 1000
-	}
-	if strings.Contains(stringData, "M") {
-		return 1000000
-	}
-	if strings.Contains(stringData, "B") {
-		return 1000000000
-	}
-	return 1
-}
-func checkForSocial(value string) (string, bool) {
+func (checkStruct) SocialInStr(value string) (string, bool) {
 	if strings.Contains(value, "facebook.com/groups") {
 		return "FacebookGroup", true
 	}
@@ -698,12 +790,7 @@ func checkForSocial(value string) (string, bool) {
 	}
 	return "", false
 }
-func getEmail(text string) string {
-	re := regexp.MustCompile(`[a-zA-Z0-9]+@[a-zA-Z0-9\.]+\.[a-zA-Z0-9]+`)
-	match := re.FindString(text)
-	return match
-}
-func isWithinYear(stringData string) bool {
+func (checkStruct) strWithinYear(stringData string) bool {
 	if strings.Contains(stringData, "day") {
 		return true
 	}
@@ -721,68 +808,13 @@ func isWithinYear(stringData string) bool {
 	}
 	return false
 }
-func removeButNumber(from string) int {
-	if from == "" {
-		return 0
-	}
-	reg, err := regexp.Compile("[^0-9]+")
-	if err != nil {
-		fmt.Printf("error: %v\n", err.Error())
-		logger.Println(err.Error())
-	}
-	processedInt, err := strconv.Atoi(reg.ReplaceAllString(from, ""))
-	if err != nil {
-		fmt.Printf("error: %v\n", err.Error())
-		logger.Println(err.Error())
-	}
-	return processedInt
-}
-func removeButFloat(from string) (returnFloat float64, err error) {
-	reg, err := regexp.Compile("[^0-9.]+")
-	if err != nil {
-		return 0, err
-	}
-	processedString := reg.ReplaceAllString(from, "")
-	resFloat, err := strconv.ParseFloat(processedString, 64)
-	if err != nil {
-		return 0, err
 
+func aryWriter(strAry ...string) string {
+	var b strings.Builder
+	for _, str := range strAry {
+		b.WriteString(str)
 	}
-	return resFloat, nil
-}
-func subscriberStringToInt(stringData string) int {
-	if stringData == "" {
-		return 0
-	}
-	var multiplier float64 = 1
-	gotInt, err := removeButFloat(stringData)
-	if err != nil {
-		fmt.Printf("subscriberStringToInt error from string %v\n", stringData)
-		fmt.Printf("error: %v\n", err.Error())
-		logger.Printf("subscriberStringToInt error from string %v\n", stringData)
-		logger.Println(err.Error())
-		return 0
-	}
-	if strings.Contains(stringData, "천") {
-		multiplier = 1000
-	}
-	if strings.Contains(stringData, "만") {
-		multiplier = 10000
-	}
-	if strings.Contains(stringData, "억") {
-		multiplier = 100000000
-	}
-	if strings.Contains(stringData, "K") {
-		multiplier = 1000
-	}
-	if strings.Contains(stringData, "M") {
-		multiplier = 1000000
-	}
-	if strings.Contains(stringData, "B") {
-		multiplier = 1000000000
-	}
-	resInt := int(gotInt * multiplier)
-	return resInt
+	return b.String()
 }
 func timeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
