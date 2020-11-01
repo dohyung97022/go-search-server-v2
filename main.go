@@ -338,7 +338,10 @@ func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (yout
 	}
 	//----------결과가 나오지 않았다면 json의 [error][errors][reason] = quotaExceeded ----------
 	// 이 케이스의 경우 error를 주고 새롷은 api key로 다시 하게끔 한다?
-
+	if len(youtubeChannels) == 0 {
+		fmt.Printf(string(body))
+		logger.Printf("error : no values was detected in script = \n%v\n", string(body))
+	}
 	return youtubeChannels, nextPageToken, nil
 }
 func getYoutubeAPIKeyFromMysql(APIQuotaPerSearch int) (ytbAPIKey string, err error) {

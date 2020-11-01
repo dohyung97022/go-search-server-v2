@@ -16,3 +16,25 @@ Log2020/11/01 15:48:22 main.go:407: Url length : 236
 Log2020/11/01 15:50:24 main.go:407: Url length : 0
 Log2020/11/01 15:50:25 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
 Log2020/11/01 15:50:25 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/01 20:30:35 main.go:408: Url length : 188
+Log2020/11/01 20:30:35 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:408: Url length : 240
+Log2020/11/01 20:33:47 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:576: Auto-generation has been detected
+Log2020/11/01 20:33:47 main.go:580: Auto-generation has been detected
+Log2020/11/01 20:40:45 main.go:410: Url length : 251
+Log2020/11/01 20:40:45 main.go:578: Auto-generation has been detected
+Log2020/11/01 20:43:09 main.go:410: Url length : 247
+Log2020/11/01 20:50:23 main.go:410: Url length : 251
+Log2020/11/01 20:50:23 main.go:578: Auto-generation has been detected
+Log2020/11/01 20:51:32 main.go:410: Url length : 242
+Log2020/11/01 20:51:32 main.go:578: Auto-generation has been detected
+Log2020/11/01 20:52:07 main.go:410: Url length : 247
+Log2020/11/01 20:52:29 main.go:410: Url length : 251
+Log2020/11/01 20:52:29 main.go:578: Auto-generation has been detected
+Log2020/11/01 20:52:51 main.go:410: Url length : 231
+Log2020/11/01 20:53:23 main.go:410: Url length : 242
