@@ -140,14 +140,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		for i, info := range intInfo {
 			b.WriteString(aryWriter(
 				"('", info.Channel, "','",
-				strings.ReplaceAll(info.Title, "'", "`"), "','",
+				strings.ReplaceAll(strings.ReplaceAll(info.Title, "'", "`"), "\\", ""), "','",
 				info.ChanURL, "','",
 				startTime.Format("2006-01-02 15:04:05"), "','",
 				info.ChanImg, "','",
 				strconv.Itoa(info.AvrViews), "','",
 				strconv.Itoa(info.TTLViews), "','",
 				strconv.Itoa(info.Subs), "','",
-				strings.ReplaceAll(info.About, "'", "`"), "')"))
+				strings.ReplaceAll(strings.ReplaceAll(info.About, "'", "`"), "\\", ""), "')"))
 			if i+1 == len(intInfo) {
 				break
 			}
@@ -284,7 +284,7 @@ func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string) 
 	start := time.Now()
 	youtubeChannelsMap := make(map[string]bool)
 
-	APIRequestAmount := 5
+	APIRequestAmount := 10
 	APIQuotaPerRequest := 100
 	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
 
@@ -317,7 +317,7 @@ func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string) 
 	return getStrAryFromStrBoolMap(youtubeChannelsMap)
 }
 func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
-	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
+	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
 	if err != nil {
 		log.Fatal(err)
 		return nil, "", err
