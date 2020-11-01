@@ -1,7 +1,7 @@
 set bucket="go-server-bucket"
 
 for %%I in (.) do set CurrentFolderName=%%~nxI
-.\7z a -r %CurrentFolderName%.zip * -x!7z.dll -x!7z.exe -x!%CurrentFolderName%.zip
+.\7z a -r %CurrentFolderName%.zip * -x!%CurrentFolderName%.zip -x!*.dll -x!*.exe -x!*.bat -x!*.go 
 
 aws s3 rm s3://%bucket%/%CurrentFolderName%.zip
 
