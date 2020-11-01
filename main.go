@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -19,33 +20,11 @@ import (
 	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
-// --------------------------------- golbal var --------------------------------------
-// put this in a env and gitignore please!!! not so credential, but is valuable information
-var (
-	ytbAPIkey = []string{
-		//dohyung97022
-		`AIzaSyAhJ3KSYWG84RbUBjwJErzdX6Zf_20SU2c`,
-		`AIzaSyAutqoSQN0yBhG4T6BPxpjjgM4i1x4iEY8`,
-		//jhondarc97022
-		`AIzaSyDIc53xLxBg4W6etfMhzuf9nqdbmsqsKOc`,
-		//dohyung97022@g.eulji.ac.kr
-		`AIzaSyCvf8CfRRxzLc2jHaIdqxcL14T68XOQdzo`,
-		//sonogram9271
-		`AIzaSyBUMoOrcXpklHODZD9r2NQyLuaCmeGxBww`,
-		//donny19513
-		`AIzaSyCwh1mfI9jxdSIIUAGUHJZnOLptUbG8-ZQ`,
-	}
-)
-
 // --------------------------------- mutex var --------------------------------------
 var (
 	lambdaCountMax = 200
 	lambdaCountUID = getInt.randomFromRange(0, lambdaCountMax)
 	lambdaMutex    sync.Mutex
-
-	ytbAPIKeyCountMax = len(ytbAPIkey) - 1
-	ytbAPIKeyCountUID = getInt.randomFromRange(0, ytbAPIKeyCountMax)
-	ytbAPIKeyMutex    sync.Mutex
 )
 
 // --------------------------------- logger var --------------------------------------
@@ -301,6 +280,42 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 }
 
 // --------------------------------- Youtube API functions --------------------------------------
+func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string) {
+	start := time.Now()
+	youtubeChannelsMap := make(map[string]bool)
+
+	APIRequestAmount := 5
+	APIQuotaPerRequest := 100
+	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
+
+	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
+	if err != nil {
+		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
+		return nil
+	}
+
+	pageToken := ""
+	for i := 0; i < APIRequestAmount; i++ {
+		youtubeChannels, newPageToken, _ := getYoutubeAPIChannels(search, pageToken, ytbAPIKey)
+		//결과가 나오지 않을 경우 다시 youtube api key를 받는다? 필요성이 있을까? 너무 복잡하지 않나?
+		// if err != nil {
+		// 	setYoutubeAPIKeyQuotaTo(ytbAPIKey, 0)
+		// 	ytbAPIKey, err = getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
+		// 	if err != nil {
+		// 		fmt.Printf("error : %v\n", err)
+		// 		logger.Println(err.Error())
+		// 		return nil
+		// 	}
+		// }
+		pageToken = newPageToken
+		for _, youtubeChannel := range youtubeChannels {
+			youtubeChannelsMap[youtubeChannel] = true
+		}
+	}
+	timeTrack(start, "getYoutubeAPIChannelsHandler")
+	return getStrAryFromStrBoolMap(youtubeChannelsMap)
+}
 func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
 	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
 	if err != nil {
@@ -321,30 +336,49 @@ func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (yout
 		id := items["id"].(map[string]interface{})
 		youtubeChannels = append(youtubeChannels, id["channelId"].(string))
 	}
+	//----------결과가 나오지 않았다면 json의 [error][errors][reason] = quotaExceeded ----------
+	// 이 케이스의 경우 error를 주고 새롷은 api key로 다시 하게끔 한다?
+
 	return youtubeChannels, nextPageToken, nil
 }
+func getYoutubeAPIKeyFromMysql(APIQuotaPerSearch int) (ytbAPIKey string, err error) {
+	v, err := msqlf.GetQuery(`
+	SET @api_key = "";
+	SET @quota = "";
 
-func getYoutubeAPIChannelsHandler(search string) (youtubeChannelsMap map[string]bool) {
-	youtubeChannelsMap = make(map[string]bool)
-
-	ytbAPIKeyMutex.Lock()
-	ytbAPIKeyCount := ytbAPIKeyCountUID
-	ytbAPIKeyCountUID++
-	if ytbAPIKeyCountUID >= ytbAPIKeyCountMax {
-		ytbAPIKeyCountUID = 0
+	SELECT ytb_api_key, ytb_api_key_quota 
+		INTO @api_key, @quota 
+		FROM adiy.ytb_api_key ORDER BY ytb_api_key_quota DESC LIMIT 1;
+		
+	SELECT @api_key AS ytb_api_key, @quota AS ytb_api_key_quota;
+	
+	UPDATE adiy.ytb_api_key 
+		SET ytb_api_key_quota = ytb_api_key_quota - ` + strconv.Itoa(APIQuotaPerSearch) + `
+		WHERE ytb_api_key_quota > 0 AND ytb_api_key = @api_key;`)
+	if err != nil {
+		return
 	}
-	ytbAPIKeyMutex.Unlock()
+	ytbAPIKey = v[0]["ytb_api_key"].(string)
+	ytbAPIKeyQuota, err := strconv.Atoi(v[0]["ytb_api_key_quota"].(string))
 
-	pageToken := ""
-	for i := 0; i < 10; i++ {
-		youtubeChannels, newPageToken, _ := getYoutubeAPIChannels(search, pageToken, ytbAPIkey[ytbAPIKeyCount])
-		//결과가 나오지 않을 경우 youtube api key count uid 를 변경한다. 그리고 youtube api key를 ytbAPIkey string array 에서 삭제한다.
-		pageToken = newPageToken
-		for _, youtubeChannel := range youtubeChannels {
-			youtubeChannelsMap[youtubeChannel] = true
-		}
+	if ytbAPIKeyQuota <= 0 {
+		err = errors.New("error : All ytb_api_key_quota is lower than 0. We need more api keys")
+		return
 	}
-	return youtubeChannelsMap
+	return
+}
+func setYoutubeAPIKeyQuotaTo(APIKey string, quotaTo int) (err error) {
+	var b strings.Builder
+	b.WriteString(`
+	UPDATE adiy.ytb_api_key 
+		SET ytb_api_key_quota = ` + strconv.Itoa(quotaTo) + `
+		WHERE ytb_api_key =` + APIKey)
+
+	err = msqlf.ExecQuery(b.String())
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 // --------------------------------- scrape functions --------------------------------------
@@ -352,7 +386,7 @@ func scrape(search string) (channels []string, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
 
-	// getYoutubeAPIChannelsHandler
+	channels = getYoutubeAPIChannelsHandler(search)
 
 	aboutUrlsArray := []string{}
 	for _, channel := range channels {
@@ -625,7 +659,6 @@ func callScraperHandler(urlArray []string, scrapeType string) (finalURLScripts m
 	timeTrack(start, "callScraperHandler")
 	return finalURLScripts
 }
-
 func callScraper(urls []string, callType string, chanURLScripts chan map[string]string, chFinished chan bool) {
 	bodyMap := callScraperStruct{
 		Type: callType,
@@ -850,4 +883,11 @@ func aryWriter(strAry ...string) string {
 func timeTrack(start time.Time, name string) {
 	elapsed := time.Since(start)
 	log.Printf("%s took %s\n", name, elapsed)
+}
+func getStrAryFromStrBoolMap(strBoolMap map[string]bool) (strAry []string) {
+	strAry = make([]string, len(strBoolMap))
+	for str := range strBoolMap {
+		strAry = append(strAry, str)
+	}
+	return strAry
 }
