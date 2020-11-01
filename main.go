@@ -19,11 +19,33 @@ import (
 	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
-// --------------------------------- mutex var --------------------------------------
-
+// --------------------------------- golbal var --------------------------------------
+// put this in a env and gitignore please!!! not so credential, but is valuable information
 var (
-	lambdaCountUID = getInt.randomFromRange(0, 200)
-	mutex          sync.Mutex
+	ytbAPIkey = []string{
+		//dohyung97022
+		`AIzaSyAhJ3KSYWG84RbUBjwJErzdX6Zf_20SU2c`,
+		`AIzaSyAutqoSQN0yBhG4T6BPxpjjgM4i1x4iEY8`,
+		//jhondarc97022
+		`AIzaSyDIc53xLxBg4W6etfMhzuf9nqdbmsqsKOc`,
+		//dohyung97022@g.eulji.ac.kr
+		`AIzaSyCvf8CfRRxzLc2jHaIdqxcL14T68XOQdzo`,
+		//sonogram9271
+		`AIzaSyBUMoOrcXpklHODZD9r2NQyLuaCmeGxBww`,
+		//donny19513
+		`AIzaSyCwh1mfI9jxdSIIUAGUHJZnOLptUbG8-ZQ`,
+	}
+)
+
+// --------------------------------- mutex var --------------------------------------
+var (
+	lambdaCountMax = 200
+	lambdaCountUID = getInt.randomFromRange(0, lambdaCountMax)
+	lambdaMutex    sync.Mutex
+
+	ytbAPIKeyCountMax = len(ytbAPIkey) - 1
+	ytbAPIKeyCountUID = getInt.randomFromRange(0, ytbAPIKeyCountMax)
+	ytbAPIKeyMutex    sync.Mutex
 )
 
 // --------------------------------- logger var --------------------------------------
@@ -302,11 +324,21 @@ func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (yout
 	return youtubeChannels, nextPageToken, nil
 }
 
-func getYoutubeAPIChannelsHandler(search string, APIkeyArry []string) (youtubeChannelsMap map[string]bool) {
-	pageToken := ""
+func getYoutubeAPIChannelsHandler(search string) (youtubeChannelsMap map[string]bool) {
 	youtubeChannelsMap = make(map[string]bool)
+
+	ytbAPIKeyMutex.Lock()
+	ytbAPIKeyCount := ytbAPIKeyCountUID
+	ytbAPIKeyCountUID++
+	if ytbAPIKeyCountUID >= ytbAPIKeyCountMax {
+		ytbAPIKeyCountUID = 0
+	}
+	ytbAPIKeyMutex.Unlock()
+
+	pageToken := ""
 	for i := 0; i < 10; i++ {
-		youtubeChannels, newPageToken, _ := getYoutubeAPIChannels(search, pageToken, "AIzaSyAhJ3KSYWG84RbUBjwJErzdX6Zf_20SU2c")
+		youtubeChannels, newPageToken, _ := getYoutubeAPIChannels(search, pageToken, ytbAPIkey[ytbAPIKeyCount])
+		//결과가 나오지 않을 경우 youtube api key count uid 를 변경한다. 그리고 youtube api key를 ytbAPIkey string array 에서 삭제한다.
 		pageToken = newPageToken
 		for _, youtubeChannel := range youtubeChannels {
 			youtubeChannelsMap[youtubeChannel] = true
@@ -320,11 +352,8 @@ func scrape(search string) (channels []string, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
 
-	//youtube api key를 kubernetes에서 공용으로 load balancing하는 방법을 고안하기
-	// channels, nextPageToken, err := getYoutubeAPIChannels(search, "AIzaSyDIc53xLxBg4W6etfMhzuf9nqdbmsqsKOc")
-	// if err != nil {
-	// 	return nil, nil, err
-	// }
+	// getYoutubeAPIChannelsHandler
+
 	aboutUrlsArray := []string{}
 	for _, channel := range channels {
 		aboutUrlsArray = append(aboutUrlsArray, "https://www.youtube.com/channel/"+channel+"/about")
@@ -604,13 +633,15 @@ func callScraper(urls []string, callType string, chanURLScripts chan map[string]
 	}
 	bodyJSON, _ := json.Marshal(bodyMap)
 	client := &http.Client{}
-	mutex.Lock()
+
+	lambdaMutex.Lock()
 	lambdaCount := lambdaCountUID
 	lambdaCountUID++
-	if lambdaCountUID >= 200 {
+	if lambdaCountUID >= lambdaCountMax {
 		lambdaCountUID = 0
 	}
-	mutex.Unlock()
+	lambdaMutex.Unlock()
+
 	request, _ := http.NewRequest("POST", "https://1vzze2ned9.execute-api.us-east-1.amazonaws.com/default/test/go-scraper-"+strconv.Itoa(lambdaCount), bytes.NewBuffer(bodyJSON))
 	response, _ := client.Do(request)
 	body, _ := ioutil.ReadAll(response.Body)
