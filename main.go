@@ -317,7 +317,7 @@ func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string) 
 	return getStrAryFromStrBoolMap(youtubeChannelsMap)
 }
 func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
-	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&order=viewCount&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
+	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
 	if err != nil {
 		log.Fatal(err)
 		return nil, "", err

@@ -38,3 +38,372 @@ Log2020/11/01 20:52:29 main.go:410: Url length : 251
 Log2020/11/01 20:52:29 main.go:578: Auto-generation has been detected
 Log2020/11/01 20:52:51 main.go:410: Url length : 231
 Log2020/11/01 20:53:23 main.go:410: Url length : 242
+Log2020/11/02 13:55:50 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VdMiLdESGNh8D5mJWokysUvPptU",
+  "nextPageToken": "CJYBEAA",
+  "prevPageToken": "CGQQAQ",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:50 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-O9aRjcyzKNf-hA7Nyu0Mf0M3gY",
+  "nextPageToken": "CMgBEAA",
+  "prevPageToken": "CJYBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:51 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "03wniYL69DO9-IMwiXuG_tIczFw",
+  "nextPageToken": "CPoBEAA",
+  "prevPageToken": "CMgBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 94762,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:51 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "W7sKnvIkc8EmcofyG5mMHpTyT0o",
+  "nextPageToken": "CKwCEAA",
+  "prevPageToken": "CPoBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:51 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "u8SgLZlbTo3vvLFdXbmMn8-5_FE",
+  "nextPageToken": "CN4CEAA",
+  "prevPageToken": "CKwCEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:51 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "TL-JOwUMXVkeGGKHaRD88QFl4vU",
+  "nextPageToken": "CJADEAA",
+  "prevPageToken": "CN4CEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:51 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "9byOjyNo-zcHfXjhbnlvQHfECo0",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:52 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "KyG9eXyxeRkLfX_M53PkRrXg6uA",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 95304,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:55:56 main.go:410: Url length : 67
+Log2020/11/02 13:56:08 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "4-yZ7QG5sdrZIq_NC7r6v2lxOOI",
+  "nextPageToken": "CGQQAA",
+  "prevPageToken": "CDIQAQ",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 296071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:09 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5pPPypVDiYUUX8k6C8JbOJSDtw0",
+  "nextPageToken": "CJYBEAA",
+  "prevPageToken": "CGQQAQ",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 283848,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:09 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "y5PTlqZuzWvmHTioSN7NEA0UFSs",
+  "nextPageToken": "CMgBEAA",
+  "prevPageToken": "CJYBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 296071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:09 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "cyTXMIWTT5DyZK5pLhONCPoy7mQ",
+  "nextPageToken": "CPoBEAA",
+  "prevPageToken": "CMgBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 296071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:10 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "8qK9Hn-oVCXU1_TT41G-8_8LXBI",
+  "nextPageToken": "CKwCEAA",
+  "prevPageToken": "CPoBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 296071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:10 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "117Rvi4qyx_6n8JdvTdDqEAjaMA",
+  "nextPageToken": "CN4CEAA",
+  "prevPageToken": "CKwCEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 296071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:10 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "1sYZ3FngU2PHR_GLZNju-TiJ548",
+  "nextPageToken": "CJADEAA",
+  "prevPageToken": "CN4CEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 296071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:10 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Lxigmym73n9jxBwsuRH1m_ajdUQ",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 305777,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:11 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "1WFRBSAAS0Agr0QjNeoEhNTXu0Q",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 286330,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:13 main.go:410: Url length : 21
+Log2020/11/02 13:56:25 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "HYe8Ookq91If5MHwmysLNsLiG2g",
+  "nextPageToken": "CGQQAA",
+  "prevPageToken": "CDIQAQ",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 208572,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:25 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ErCXtY9et6paM-rLwAhrdbyTLJo",
+  "nextPageToken": "CJYBEAA",
+  "prevPageToken": "CGQQAQ",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 201852,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:26 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "LMy6izeVM-LJdG0YDkQB_HYC-08",
+  "nextPageToken": "CMgBEAA",
+  "prevPageToken": "CJYBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 201852,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:26 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "TrwJlRD1mDsF9Guv4mgG5w4G4S8",
+  "nextPageToken": "CPoBEAA",
+  "prevPageToken": "CMgBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 196339,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:26 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "KuLz0-10QF9Nmsr2zgIrGiwtEm8",
+  "nextPageToken": "CKwCEAA",
+  "prevPageToken": "CPoBEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 208572,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:26 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "W8snLkUo43G-5xEnENwIpjW3lB8",
+  "nextPageToken": "CN4CEAA",
+  "prevPageToken": "CKwCEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 208572,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:27 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0HE8Br8sh7sV-XkIN4A1ke9smmA",
+  "nextPageToken": "CJADEAA",
+  "prevPageToken": "CN4CEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 205100,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:27 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YlvvjiETfcIwrZCjxL6dkdEHKLo",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 208572,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:27 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Nzha33_dz30fUtftBLpMS1HldaM",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 208572,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 13:56:30 main.go:410: Url length : 11
+Log2020/11/02 13:56:30 main.go:578: Auto-generation has been detected
+Log2020/11/02 13:56:30 main.go:582: Auto-generation has been detected
