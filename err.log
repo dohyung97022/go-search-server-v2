@@ -407,3 +407,463 @@ Log2020/11/02 13:56:27 main.go:343: error : no values was detected in script =
 Log2020/11/02 13:56:30 main.go:410: Url length : 11
 Log2020/11/02 13:56:30 main.go:578: Auto-generation has been detected
 Log2020/11/02 13:56:30 main.go:582: Auto-generation has been detected
+Log2020/11/02 13:58:23 main.go:410: Url length : 487
+Log2020/11/02 13:58:23 main.go:578: Auto-generation has been detected
+Log2020/11/02 13:58:23 main.go:582: Auto-generation has been detected
+Log2020/11/02 13:59:12 main.go:410: Url length : 468
+Log2020/11/02 13:59:12 main.go:578: Auto-generation has been detected
+Log2020/11/02 13:59:12 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:410: Url length : 479
+Log2020/11/02 14:00:05 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:05 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:41 main.go:410: Url length : 461
+Log2020/11/02 14:00:41 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:41 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:41 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:41 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:00:41 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:41 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:00:57 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IGEUPO5597y-5YO6SKguyIF94Pg",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 52125,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 14:00:58 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "37ps_TeTAVd4jdb_yClNaGjZf9s",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 50559,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 14:01:17 main.go:410: Url length : 354
+Log2020/11/02 14:01:17 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:01:17 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:01:48 main.go:410: Url length : 487
+Log2020/11/02 14:01:48 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:01:48 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:01:48 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:01:48 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:410: Url length : 433
+Log2020/11/02 14:02:27 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:02:27 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:03:02 main.go:410: Url length : 433
+Log2020/11/02 14:03:02 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:03:02 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:03:36 main.go:410: Url length : 463
+Log2020/11/02 14:04:07 main.go:410: Url length : 464
+Log2020/11/02 14:04:07 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:04:07 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:04:25 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "oNRtMNVTYw5AYkUB-uoT4TVgpo4",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 67714,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 14:04:39 main.go:410: Url length : 352
+Log2020/11/02 14:04:39 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:04:39 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:04:39 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:04:39 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:410: Url length : 483
+Log2020/11/02 14:05:13 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:13 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:410: Url length : 443
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:05:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:06:32 main.go:410: Url length : 426
+Log2020/11/02 14:07:05 main.go:410: Url length : 433
+Log2020/11/02 14:07:33 main.go:410: Url length : 446
+Log2020/11/02 14:08:08 main.go:410: Url length : 488
+Log2020/11/02 14:08:46 main.go:410: Url length : 493
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:08:46 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:09:02 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "P02Xr96a_kIOvDyRvwqu-AJk600",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 15217,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 14:09:22 main.go:410: Url length : 432
+Log2020/11/02 14:09:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:09:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:410: Url length : 464
+Log2020/11/02 14:10:04 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:04 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:36 main.go:410: Url length : 420
+Log2020/11/02 14:10:36 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:36 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:10:36 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:10:36 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:11:06 main.go:410: Url length : 451
+Log2020/11/02 14:11:06 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:11:06 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:11:07 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:11:07 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:11:48 main.go:410: Url length : 464
+Log2020/11/02 14:11:48 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:11:48 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:11:48 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:11:48 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:05 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "AIXQozF8b2Mb4x34d4K_qyDX9kY",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 753,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 14:12:05 main.go:343: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "6B7HpbJnX--PNDYo3ND80xdvrkA",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 786,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 14:12:22 main.go:410: Url length : 369
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:578: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:766: subscriberStringToInt error from string Watch the latest and greatest hits
+Log2020/11/02 14:12:22 main.go:767: strconv.ParseFloat: parsing "": invalid syntax
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:22 main.go:582: Auto-generation has been detected
+Log2020/11/02 14:12:35 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 14:12:35 main.go:410: Url length : 0
+Log2020/11/02 14:12:37 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 14:12:37 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 14:12:48 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 14:12:48 main.go:410: Url length : 0
+Log2020/11/02 14:12:49 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 14:12:49 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 14:12:59 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 14:12:59 main.go:410: Url length : 0
+Log2020/11/02 14:13:00 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 14:13:00 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 14:13:11 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 14:13:11 main.go:410: Url length : 0
+Log2020/11/02 14:13:11 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 14:13:11 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 15:18:51 main.go:418: Url length : 439
+Log2020/11/02 15:18:51 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:18:51 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:18:51 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:18:51 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:18:51 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:18:51 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:18:59 main.go:348: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "SM5mIpv8VmBCRxkybdMrxn280dU",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 46806,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 15:18:59 main.go:348: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "KRP0QD0jfWfCh3-Xuzsn4rYQVio",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 47123,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 15:19:18 main.go:418: Url length : 346
+Log2020/11/02 15:19:18 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:19:18 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:19:18 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:19:18 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:19:46 main.go:418: Url length : 438
+Log2020/11/02 15:19:46 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:19:46 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:05 main.go:418: Url length : 438
+Log2020/11/02 15:20:05 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:05 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:05 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:05 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:05 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:05 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:28 main.go:418: Url length : 470
+Log2020/11/02 15:20:28 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:28 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:34 main.go:348: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "nM4QbaGyMTjZtXM-SF6LeTI3ySc",
+  "nextPageToken": "CMIDEAA",
+  "prevPageToken": "CJADEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 714,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 15:20:35 main.go:348: error : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CGmHlJACN3Z5-fWDG3HTpaPlNJ4",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 714,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/02 15:20:46 main.go:418: Url length : 384
+Log2020/11/02 15:20:46 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:586: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:46 main.go:590: Auto-generation has been detected
+Log2020/11/02 15:20:49 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 15:20:49 main.go:418: Url length : 0
+Log2020/11/02 15:20:50 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 15:20:50 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 15:20:52 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 15:20:52 main.go:418: Url length : 0
+Log2020/11/02 15:20:53 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 15:20:53 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 15:20:54 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 15:20:54 main.go:418: Url length : 0
+Log2020/11/02 15:20:55 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 15:20:55 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 15:20:56 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 15:20:56 main.go:418: Url length : 0
+Log2020/11/02 15:20:57 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 15:20:57 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 15:20:59 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 15:20:59 main.go:418: Url length : 0
+Log2020/11/02 15:21:00 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 15:21:00 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/02 15:21:01 main.go:294: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/02 15:21:01 main.go:418: Url length : 0
+Log2020/11/02 15:21:02 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/02 15:21:02 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
