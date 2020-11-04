@@ -867,3 +867,22 @@ Log2020/11/02 15:21:01 main.go:294: error : All ytb_api_key_quota is lower than 
 Log2020/11/02 15:21:01 main.go:418: Url length : 0
 Log2020/11/02 15:21:02 main.go:162: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
 Log2020/11/02 15:21:02 main.go:163: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/04 10:38:31 main.go:430: Url length : 465
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
+Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected

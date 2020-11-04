@@ -261,8 +261,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	// ----------------- getallpage parameter -----------------
-	getAllPage := queryOrDefaultStr("getallpage", "", r)
-	if getAllPage != "true" {
+	getAll := queryOrDefaultStr("getall", "", r)
+	if getAll != "true" {
 		b.WriteString(aryWriter("LIMIT ", strconv.Itoa((pageInt-1)*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
 	}
 	v, err = msqlf.GetQuery(b.String())
@@ -297,8 +297,8 @@ func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string, 
 	start := time.Now()
 	youtubeChannelsMap := make(map[string]bool)
 
-	APIRequestAmount := 10
-	APIQuotaPerRequest := 100
+	APIRequestAmount := 100
+	APIQuotaPerRequest := 1000
 	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
 
 	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
