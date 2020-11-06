@@ -298,7 +298,7 @@ func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string, 
 	youtubeChannelsMap := make(map[string]bool)
 
 	APIRequestAmount := 100
-	APIQuotaPerRequest := 1000
+	APIQuotaPerRequest := 100
 	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
 
 	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)

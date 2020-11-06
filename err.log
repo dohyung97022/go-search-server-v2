@@ -886,3 +886,4996 @@ Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
 Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
 Log2020/11/04 10:38:31 main.go:598: Auto-generation has been detected
 Log2020/11/04 10:38:31 main.go:602: Auto-generation has been detected
+Log2020/11/04 10:44:22 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MinhZ8eP3N4MGOGKZ9ferXWJEDE",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:22 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "rKpSmQTzeCTf1DXWkgEZZnZ9yzc",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:22 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VmBcYXkrQ-SwfAyRaZPiGdSWsig",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 600344,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:23 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VB_RBIE5dCg-ZsyP_tzoC21i3OQ",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:23 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ShIsmHoTnAWGPT756GI6WRR7e3I",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:23 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IApy3EJa7zVj3L7oBFwwlFTy2Xg",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:24 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FXF98WTRYSeTcBVCo2lBdoUICEA",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:24 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MfmUXe6Wt-M_OF2uWpUuEwiC7GM",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 591165,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:24 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_ickeoQJDUYmlhdLhm0KY6-l4dE",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:25 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YjlZTiH18OBZggPMgXWEWtYwi50",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:25 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ccvSpBd7tE3oHp1WG4QNU5K97x8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MinhZ8eP3N4MGOGKZ9ferXWJEDE",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "9VY9fZxhYe291I0sGp15vDwC8x8",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 581962,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m497_7uGSnxvEByd2N3wTcD3Yww",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VB_RBIE5dCg-ZsyP_tzoC21i3OQ",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:30 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ShIsmHoTnAWGPT756GI6WRR7e3I",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:30 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IApy3EJa7zVj3L7oBFwwlFTy2Xg",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:30 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FXF98WTRYSeTcBVCo2lBdoUICEA",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "7u0oofgP1CE5LfkH64run2-rPiU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 596038,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_ickeoQJDUYmlhdLhm0KY6-l4dE",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YjlZTiH18OBZggPMgXWEWtYwi50",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ccvSpBd7tE3oHp1WG4QNU5K97x8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:35 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MinhZ8eP3N4MGOGKZ9ferXWJEDE",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:35 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MlZzmEQucr_kKpJF5ChWORm2TqI",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 597348,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:35 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m497_7uGSnxvEByd2N3wTcD3Yww",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VB_RBIE5dCg-ZsyP_tzoC21i3OQ",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ShIsmHoTnAWGPT756GI6WRR7e3I",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IApy3EJa7zVj3L7oBFwwlFTy2Xg",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "X7AnSUcJYchB-vjuqNDfcZO91Eg",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 600344,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "R3hAyiFOZuwli3Eoy_eav9-yGYo",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "p7IUH1gF5Y-yTFLOUe3WNv4DZHE",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 591922,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YjlZTiH18OBZggPMgXWEWtYwi50",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ccvSpBd7tE3oHp1WG4QNU5K97x8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:41 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "81xXFOc_8dgopmfbTmSP3vWUxdw",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 590194,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:41 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "rKpSmQTzeCTf1DXWkgEZZnZ9yzc",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m497_7uGSnxvEByd2N3wTcD3Yww",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zRwXS7lTI8CluN-c3kDrMQwyzmw",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 570154,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "C3T_YkPbptPUKfwyRpasusuqR9o",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 562342,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "w3SmF-_-LPMlpzdZmITU6L2djlQ",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 569935,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FXF98WTRYSeTcBVCo2lBdoUICEA",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JRG61MOX7y8Vp6AEXr9fLUQUxMA",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 589996,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MoUAknKJu1E77hHgisQp2Y8QKfo",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 600344,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JcMvC-Dc9uNgfnmxCY2hiHPlGG4",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 581075,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ccvSpBd7tE3oHp1WG4QNU5K97x8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:47 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MinhZ8eP3N4MGOGKZ9ferXWJEDE",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:47 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "rKpSmQTzeCTf1DXWkgEZZnZ9yzc",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:48 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zaUMhuQdrpnwGkmDPuatFviZNjU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 589996,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:48 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VB_RBIE5dCg-ZsyP_tzoC21i3OQ",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:48 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ShIsmHoTnAWGPT756GI6WRR7e3I",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IApy3EJa7zVj3L7oBFwwlFTy2Xg",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FXF98WTRYSeTcBVCo2lBdoUICEA",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "u_cdKZJ09rLmkrGNoPFINyRnQE4",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 570154,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_ickeoQJDUYmlhdLhm0KY6-l4dE",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "YjlZTiH18OBZggPMgXWEWtYwi50",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:44:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ccvSpBd7tE3oHp1WG4QNU5K97x8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 544910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 10:45:15 main.go:430: Url length : 449
+Log2020/11/04 11:20:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dosKO2hS6DVSCD2Spp7v8GSuoMU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "00Gn__0mYC1fxqjUWap9SbspB4U",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vbr9ISkT96qH0R8Uc83aqnX0xtk",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2y51_pP_muJwizBGvROX_bmAxcA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dwa_ItvRjXZU_E4VN3xqpKYMyak",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35287,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:33 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "LO1UmaBL0slcqOY2yWlsyO78wcY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35935,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:33 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "8hMRHe85YLj01L7VpoCyg-482JY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:33 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Bfplql_4RnFGYaw9BRyfSj7Y-j0",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 36146,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:34 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-LGr2gx3tzB3f8EucCMVbMfZUe8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dosKO2hS6DVSCD2Spp7v8GSuoMU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "00Gn__0mYC1fxqjUWap9SbspB4U",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vbr9ISkT96qH0R8Uc83aqnX0xtk",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2y51_pP_muJwizBGvROX_bmAxcA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CpVTNqTW1jMx3TTf9nS2ei7yOBo",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IpFLXctFdpWUUSOGhAbh9JYq5WY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "8hMRHe85YLj01L7VpoCyg-482JY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:40 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VTr3CPE87rcYwbTTVUA_iTQB3X8",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:40 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-LGr2gx3tzB3f8EucCMVbMfZUe8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dosKO2hS6DVSCD2Spp7v8GSuoMU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "00Gn__0mYC1fxqjUWap9SbspB4U",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vbr9ISkT96qH0R8Uc83aqnX0xtk",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "jxvSOt5EGhP8iuDo8ItntHlm_2I",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 36227,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CpVTNqTW1jMx3TTf9nS2ei7yOBo",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "LO1UmaBL0slcqOY2yWlsyO78wcY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35935,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "8hMRHe85YLj01L7VpoCyg-482JY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ZXIiFlDNd__Nb9r4fU6kNUS-WA8",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35242,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-LGr2gx3tzB3f8EucCMVbMfZUe8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dosKO2hS6DVSCD2Spp7v8GSuoMU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "00Gn__0mYC1fxqjUWap9SbspB4U",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vbr9ISkT96qH0R8Uc83aqnX0xtk",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2y51_pP_muJwizBGvROX_bmAxcA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CpVTNqTW1jMx3TTf9nS2ei7yOBo",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IpFLXctFdpWUUSOGhAbh9JYq5WY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "8hMRHe85YLj01L7VpoCyg-482JY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VTr3CPE87rcYwbTTVUA_iTQB3X8",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-LGr2gx3tzB3f8EucCMVbMfZUe8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ndCiMl0zycB25eFE1cW_0IDqR8k",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 34663,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "00Gn__0mYC1fxqjUWap9SbspB4U",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vbr9ISkT96qH0R8Uc83aqnX0xtk",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2y51_pP_muJwizBGvROX_bmAxcA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3gJzgn9uV2ujwun2rdns8mJjtAE",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 36146,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "IpFLXctFdpWUUSOGhAbh9JYq5WY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "8V-s2jLJ_toVpJ7JVTKA5WwEnQk",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 34671,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VTr3CPE87rcYwbTTVUA_iTQB3X8",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:20:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-LGr2gx3tzB3f8EucCMVbMfZUe8",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 35488,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:21:14 main.go:430: Url length : 536
+Log2020/11/04 11:22:34 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "aVw4F4El6o22M4FzqVzr6ZS80cE",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:35 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "ffh0pLCEjtWFCPVe6XFPyuyKeRU",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 43912,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:35 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "RODSgdA0MlB1KJ9A0uWO0OITQa0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:35 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JGFYfjSDXYZXiZnyXiuKWGl89AY",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "A_1Np86wmP1wqwSE_CdNeMAs3Yk",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "cAxs4_rlalRJjSTFPdOiVtB-e_U",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "tGbomMgkYM85DnemyMh6_zksMYg",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3mhPgMPVsRJvA2gUyx5YM380kvY",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:41 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "aVw4F4El6o22M4FzqVzr6ZS80cE",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "nWKeRcxlh5IfCiuF9agc340uemM",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "RODSgdA0MlB1KJ9A0uWO0OITQa0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JGFYfjSDXYZXiZnyXiuKWGl89AY",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Cx-GN6qMbzxWQqF0GlgIKJR3ryI",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45540,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "cAxs4_rlalRJjSTFPdOiVtB-e_U",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zpSC1KyOzDDPEAc6L5yy_2fQZJQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "K2WcTaXL0OMwlcHymzUDU9qA8vM",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45072,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:48 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "aVw4F4El6o22M4FzqVzr6ZS80cE",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "nWKeRcxlh5IfCiuF9agc340uemM",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "RODSgdA0MlB1KJ9A0uWO0OITQa0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zNJ0L32xoUoY_2EWnH2Ds83TR2o",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45540,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "y-gZjugBK4jMj3iRehGxgzvIXgc",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45071,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "lPKJCbI-J1_iWUhrkC1EPlZwRak",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44559,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zpSC1KyOzDDPEAc6L5yy_2fQZJQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zbm8YcsNjgnBdHNxCm2wQykwpis",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 43998,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:55 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2_G7IThPJCp65f3ojsyrfkHkCjc",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44983,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:55 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "nWKeRcxlh5IfCiuF9agc340uemM",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:55 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kXBBLZc5Xigt5VQ2MqOUsXcBpDA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45385,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JGFYfjSDXYZXiZnyXiuKWGl89AY",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m3AlaYXUxTxWD8q20RxqheZTZKY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44657,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "cAxs4_rlalRJjSTFPdOiVtB-e_U",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "eDmN4ngA4BArR2dFE561oxQ7vPM",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44983,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:22:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3mhPgMPVsRJvA2gUyx5YM380kvY",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:02 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "PtdgaE2ltBdCImaCsWHk6Rf2rlc",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44657,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:02 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "nWKeRcxlh5IfCiuF9agc340uemM",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:02 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "RODSgdA0MlB1KJ9A0uWO0OITQa0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Mpnyby09_uongA1XOvRPIBJ6rrY",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 43751,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "A_1Np86wmP1wqwSE_CdNeMAs3Yk",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "cAxs4_rlalRJjSTFPdOiVtB-e_U",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:04 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zpSC1KyOzDDPEAc6L5yy_2fQZJQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44573,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:04 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "LAI0nvoa3oFIiOXkJqgoMk024ik",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45232,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:23:30 main.go:430: Url length : 661
+Log2020/11/04 11:24:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_paPOUxDDkvKXOJGwuYZ0Eh703Q",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EXlMgmXoLjEg2PbaRB2akd_l44Y",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pnp4E5T6x0uSKWqbSrB0IrsEuRM",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "uzE5ZRPK6m29uGwtEzbEUNdj9c4",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0FU5xHIvTlb5volY7AJpd9e_jYU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3exCol-m7j129zxGmtG-DLZU8nc",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "n-v5aiCMmFcQYfBkR6MInjBYRXk",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:40 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kJFeQmVs4ceJT9YEEboF3H5d1Fw",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_paPOUxDDkvKXOJGwuYZ0Eh703Q",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EXlMgmXoLjEg2PbaRB2akd_l44Y",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pnp4E5T6x0uSKWqbSrB0IrsEuRM",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "uzE5ZRPK6m29uGwtEzbEUNdj9c4",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0FU5xHIvTlb5volY7AJpd9e_jYU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3exCol-m7j129zxGmtG-DLZU8nc",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "n-v5aiCMmFcQYfBkR6MInjBYRXk",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:47 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kJFeQmVs4ceJT9YEEboF3H5d1Fw",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_paPOUxDDkvKXOJGwuYZ0Eh703Q",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EXlMgmXoLjEg2PbaRB2akd_l44Y",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pnp4E5T6x0uSKWqbSrB0IrsEuRM",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "uzE5ZRPK6m29uGwtEzbEUNdj9c4",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0FU5xHIvTlb5volY7AJpd9e_jYU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:53 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3exCol-m7j129zxGmtG-DLZU8nc",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:53 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "n-v5aiCMmFcQYfBkR6MInjBYRXk",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:53 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kJFeQmVs4ceJT9YEEboF3H5d1Fw",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_paPOUxDDkvKXOJGwuYZ0Eh703Q",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EXlMgmXoLjEg2PbaRB2akd_l44Y",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pnp4E5T6x0uSKWqbSrB0IrsEuRM",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "uzE5ZRPK6m29uGwtEzbEUNdj9c4",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0FU5xHIvTlb5volY7AJpd9e_jYU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:24:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3exCol-m7j129zxGmtG-DLZU8nc",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:00 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "n-v5aiCMmFcQYfBkR6MInjBYRXk",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:00 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kJFeQmVs4ceJT9YEEboF3H5d1Fw",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:05 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_paPOUxDDkvKXOJGwuYZ0Eh703Q",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:05 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EXlMgmXoLjEg2PbaRB2akd_l44Y",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:05 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pnp4E5T6x0uSKWqbSrB0IrsEuRM",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:06 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "uzE5ZRPK6m29uGwtEzbEUNdj9c4",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:06 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0FU5xHIvTlb5volY7AJpd9e_jYU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:06 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3exCol-m7j129zxGmtG-DLZU8nc",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:07 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "n-v5aiCMmFcQYfBkR6MInjBYRXk",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:07 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kJFeQmVs4ceJT9YEEboF3H5d1Fw",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:25:33 main.go:430: Url length : 665
+Log2020/11/04 11:25:33 main.go:598: Auto-generation has been detected
+Log2020/11/04 11:25:33 main.go:602: Auto-generation has been detected
+Log2020/11/04 11:33:24 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dq4lpZ3wj9j48WVbs5Ld3rCiPe0",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:24 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Gke2W68ge__npvGL3zCsEjifhPY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:25 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "4Pohnb4L-iqsffUnK46OAJd3tzk",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:25 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "fsKXeHV6CjEgpznHErR7w5eReSo",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:25 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3dhMx2u_6-RTJMgVpZWHu6dUSjI",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:26 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "K05lcAg4_EoNJmKfSQcu4zy-41g",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:26 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "d1uDE80dnFMWPbFfkpmtc55ljwA",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:26 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2_zgfbDxYWC7vWIo4ufe7blxsKw",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "dq4lpZ3wj9j48WVbs5Ld3rCiPe0",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "g2meDD35Ag4NcyL4VyBaDFcLLaw",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 32717,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "0zIPLYtbBavbd7EzIiKUfu2GVFs",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33457,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "RQpokxeqax-hs4Dbb6jJjZVsS1o",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "H-k4AlwmuCJA96r0gHGuiv1lEN4",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 30931,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:33 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "AnrA8A6Sub3qd4neuR5SG_QXhnA",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33496,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:33 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "d1uDE80dnFMWPbFfkpmtc55ljwA",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:33 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zajwRy5b-Eg4rGc66j4cmJRA7MA",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "MCFfdGdmQboowKOdmRLZrAg7x3I",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 34149,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WIII6S79er3GrzmBt8LbOMd2riA",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kj-zTSvI8tczAUK-o-8bc0oV-0g",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33317,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "g0b5wiML5sTCvEO2G2xMM5xKofg",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "tOdWdAS-64BFRhwUKiVd_fvcWWM",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 31385,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "K05lcAg4_EoNJmKfSQcu4zy-41g",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "AWRlfxJz5cgn8g_4AXhx86zayNE",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:40 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "nXK5_jGpYwgXdpsrM2-lGGzRx0U",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33787,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FxEKmifBPqmmX-9YuVvuH0wLzwc",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33137,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WIII6S79er3GrzmBt8LbOMd2riA",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "4Pohnb4L-iqsffUnK46OAJd3tzk",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "g0b5wiML5sTCvEO2G2xMM5xKofg",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3dhMx2u_6-RTJMgVpZWHu6dUSjI",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "6_mi79RVzbQVWrJtSfaVZSpOBm8",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "AWRlfxJz5cgn8g_4AXhx86zayNE",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33036,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "zajwRy5b-Eg4rGc66j4cmJRA7MA",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FxEKmifBPqmmX-9YuVvuH0wLzwc",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33137,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Gke2W68ge__npvGL3zCsEjifhPY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "d7rkRodYo7W_kNE8l6F26lUTL-Q",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "g0b5wiML5sTCvEO2G2xMM5xKofg",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "QLHnL0MMD5pbWJ2OXyBAWI01agA",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33317,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "K05lcAg4_EoNJmKfSQcu4zy-41g",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "d1uDE80dnFMWPbFfkpmtc55ljwA",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33037,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:33:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "D0rsqAgku6-uf_uXiCpoKiQOguk",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 33910,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:13 main.go:430: Url length : 641
+Log2020/11/04 11:34:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "xdCrpmcHn1z7xuTqnCx2J0yJyqM",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "O-Avn27-J3pXC4LoKjT4u87zeQI",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 326441,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "uVD_bmBi4Le8LjUeRC2UlZ59jHI",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 344654,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CKSeTGfLbGpoj0GS_BNycC4Or2I",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 340196,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vgY_y-MnvzhJINHLWweroMh4tWI",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Dl7kX1PyV0jbo7duUmXLD9tv0eA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "j0wuK6mH7Hen0lO4E_fdpKRgOPQ",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pTKIze2T8YzhvAy3N3WDMqVmiEA",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hE0JX_lCaMElShZB43anC6FUy1Q",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kL1eliAN8UD3oC5cPVgQb-DDeBE",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m-floKcUb4IlBCQ-bDGUK4zZ0XA",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:55 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "xdCrpmcHn1z7xuTqnCx2J0yJyqM",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:55 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Z5U-k-BxDwBvlQ3BemYnRU2e9bM",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 330743,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "BAbsg0xw3ZtrVZYF9rqQrZ3rqIU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hgJP8TCxeGlQD3FL1KvJ7Lg0QfI",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vgY_y-MnvzhJINHLWweroMh4tWI",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Dl7kX1PyV0jbo7duUmXLD9tv0eA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3oClzX58g-pFcgb8PGjEqBZ1Q8o",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 342673,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hBeoI2PRh0R6Mub2_6l5P6ZJjkE",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 330743,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hE0JX_lCaMElShZB43anC6FUy1Q",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "U9eSXiV3hpEc-UTkPzvNWZ24Sfo",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 333100,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:34:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m-floKcUb4IlBCQ-bDGUK4zZ0XA",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:01 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "xdCrpmcHn1z7xuTqnCx2J0yJyqM",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:01 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2dxsKglmeVYNuwscSh6qccNvQhw",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:01 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "BAbsg0xw3ZtrVZYF9rqQrZ3rqIU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:02 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hgJP8TCxeGlQD3FL1KvJ7Lg0QfI",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:02 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vgY_y-MnvzhJINHLWweroMh4tWI",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:02 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Dl7kX1PyV0jbo7duUmXLD9tv0eA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "j0wuK6mH7Hen0lO4E_fdpKRgOPQ",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pTKIze2T8YzhvAy3N3WDMqVmiEA",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hE0JX_lCaMElShZB43anC6FUy1Q",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kL1eliAN8UD3oC5cPVgQb-DDeBE",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:04 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m-floKcUb4IlBCQ-bDGUK4zZ0XA",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:07 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2dxsKglmeVYNuwscSh6qccNvQhw",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:07 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "BAbsg0xw3ZtrVZYF9rqQrZ3rqIU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:08 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hgJP8TCxeGlQD3FL1KvJ7Lg0QfI",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:08 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vgY_y-MnvzhJINHLWweroMh4tWI",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:08 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Dl7kX1PyV0jbo7duUmXLD9tv0eA",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:09 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "j0wuK6mH7Hen0lO4E_fdpKRgOPQ",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:09 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "pTKIze2T8YzhvAy3N3WDMqVmiEA",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:09 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hE0JX_lCaMElShZB43anC6FUy1Q",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:09 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "kL1eliAN8UD3oC5cPVgQb-DDeBE",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:10 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "m-floKcUb4IlBCQ-bDGUK4zZ0XA",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:13 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "xdCrpmcHn1z7xuTqnCx2J0yJyqM",
+  "nextPageToken": "CPQDEAA",
+  "prevPageToken": "CMIDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:13 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2dxsKglmeVYNuwscSh6qccNvQhw",
+  "nextPageToken": "CKYEEAA",
+  "prevPageToken": "CPQDEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:13 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "BAbsg0xw3ZtrVZYF9rqQrZ3rqIU",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:13 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hgJP8TCxeGlQD3FL1KvJ7Lg0QfI",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 346022,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/04 11:35:13 main.go:360: check : no values was detected in script = 
+{
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "errors": [
+      {
+        "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+        "domain": "youtube.quota",
+        "reason": "quotaExceeded"
+      }
+    ]
+  }
+}
+
+Log2020/11/04 11:35:14 main.go:360: check : no values was detected in script = 
+{
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "errors": [
+      {
+        "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+        "domain": "youtube.quota",
+        "reason": "quotaExceeded"
+      }
+    ]
+  }
+}
+
+Log2020/11/04 11:35:14 main.go:360: check : no values was detected in script = 
+{
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "errors": [
+      {
+        "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+        "domain": "youtube.quota",
+        "reason": "quotaExceeded"
+      }
+    ]
+  }
+}
+
+Log2020/11/04 11:35:14 main.go:360: check : no values was detected in script = 
+{
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "errors": [
+      {
+        "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+        "domain": "youtube.quota",
+        "reason": "quotaExceeded"
+      }
+    ]
+  }
+}
+
+Log2020/11/04 11:35:14 main.go:360: check : no values was detected in script = 
+{
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "errors": [
+      {
+        "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+        "domain": "youtube.quota",
+        "reason": "quotaExceeded"
+      }
+    ]
+  }
+}
+
+Log2020/11/04 11:35:14 main.go:360: check : no values was detected in script = 
+{
+  "error": {
+    "code": 403,
+    "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+    "errors": [
+      {
+        "message": "The request cannot be completed because you have exceeded your \u003ca href=\"/youtube/v3/getting-started#quota\"\u003equota\u003c/a\u003e.",
+        "domain": "youtube.quota",
+        "reason": "quotaExceeded"
+      }
+    ]
+  }
+}
+
+Log2020/11/04 11:35:48 main.go:430: Url length : 493
+Log2020/11/04 11:52:57 main.go:307: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/04 11:52:57 main.go:430: Url length : 0
+Log2020/11/04 11:52:58 main.go:175: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/04 11:52:58 main.go:176: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/06 13:38:40 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "snj92pSR2iLDh-7-TWsGcgOuTTU",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:41 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Pd-0XKyf48OANX7bdolTMahfDDY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:41 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-oWvwB4CNXR5kC0kJf1QOKJrDp0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EWYJR6Gn0QkXSHHxtEh9Mhfj8ZM",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2JTIjjkpWI1Up2g0b14BP5Eai60",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:42 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5FVQ2stcSDiC5szW2Ankr_9zoYM",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VFS_th9jJHcVA0WeUhJeqDYeSrw",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 46016,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sC22reLgqi-yptoxKpUqbL1MJ7k",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:48 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "snj92pSR2iLDh-7-TWsGcgOuTTU",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:48 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Pd-0XKyf48OANX7bdolTMahfDDY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-oWvwB4CNXR5kC0kJf1QOKJrDp0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:49 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EWYJR6Gn0QkXSHHxtEh9Mhfj8ZM",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JyIx0KpVgFlE0jeJlSNVs9logkA",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45517,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5FVQ2stcSDiC5szW2Ankr_9zoYM",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "tOjcvMJ4y2fi_nyQ_QxlyvrWMoA",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44401,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sC22reLgqi-yptoxKpUqbL1MJ7k",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:55 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "snj92pSR2iLDh-7-TWsGcgOuTTU",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Pd-0XKyf48OANX7bdolTMahfDDY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:56 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-oWvwB4CNXR5kC0kJf1QOKJrDp0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EWYJR6Gn0QkXSHHxtEh9Mhfj8ZM",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2JTIjjkpWI1Up2g0b14BP5Eai60",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5FVQ2stcSDiC5szW2Ankr_9zoYM",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Tjn1i11O9h30RSD0Xp00VJT1zQU",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:38:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sC22reLgqi-yptoxKpUqbL1MJ7k",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "snj92pSR2iLDh-7-TWsGcgOuTTU",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Pd-0XKyf48OANX7bdolTMahfDDY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:03 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "-oWvwB4CNXR5kC0kJf1QOKJrDp0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:04 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sRW58Ox_mY1aLmEwnf6p7gz4sI4",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44741,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:04 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "2JTIjjkpWI1Up2g0b14BP5Eai60",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:05 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5FVQ2stcSDiC5szW2Ankr_9zoYM",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:05 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Tjn1i11O9h30RSD0Xp00VJT1zQU",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:05 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sC22reLgqi-yptoxKpUqbL1MJ7k",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:10 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "SqB8Kf4a31pof3n-eChyNCqxQo0",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44913,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:10 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "Pd-0XKyf48OANX7bdolTMahfDDY",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:11 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "bRAmP-AOdHucOWpNx9W3Z6O6re0",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44812,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:11 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "EWYJR6Gn0QkXSHHxtEh9Mhfj8ZM",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:12 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "9usscMFKMrmtrW9w-Z8_RiENBiY",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 45310,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:12 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "5FVQ2stcSDiC5szW2Ankr_9zoYM",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:13 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "VFS_th9jJHcVA0WeUhJeqDYeSrw",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 46016,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:13 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "sC22reLgqi-yptoxKpUqbL1MJ7k",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 44692,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:39:51 main.go:430: Url length : 637
+Log2020/11/06 13:41:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "786-CL-aQVGdWim9UUkGzw3loXQ",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "FTQekytVnOr5stXUEpwBvbnard0",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14508,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:29 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "l-8Nte_DpARKpRX-zmr-SR-raq4",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14187,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:30 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "E7Vm96EHdES-MdSZp_7Z6ALJTdM",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14549,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:30 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_eWLnui2OP2sCcBRARoAxP_OEkE",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "tyJ90hJbGp9xgHdfHNlj75nquKk",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14549,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:31 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "xqEdigwiSbRa_9uKD16l137zpKM",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14508,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "guUSuvwim5stPtqLrpPZtx1xmBQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:32 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "q13swwheNr9lZFqJAbgUtQIpakM",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14187,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:36 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "786-CL-aQVGdWim9UUkGzw3loXQ",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "o9WMfXPtP_WzU-SoRJ1za9M5AaQ",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14509,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:37 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "TtOtWwx4KinQMc-ZvyT2MAocd6E",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WVyfSWNlOhhAEU8jVRHT7e3qXVQ",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_eWLnui2OP2sCcBRARoAxP_OEkE",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:38 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "PSqSyQVwd-H3nyzA9Pc-YSkZuiU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "OiTFxS5xVAHU7JsyP6PjC23LeGY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CZ772_o8iMmZtqmwGy6m5eYgchQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14195,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:39 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "JKR4QGQqm8l3UZRfVcoPRj1u9E0",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14509,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:43 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "786-CL-aQVGdWim9UUkGzw3loXQ",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CQAXtxZu9dVnO3Wx9HeBOprEzeo",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_NRlkxxTxBLULsp_LdAWOT27uP0",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14421,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:44 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WVyfSWNlOhhAEU8jVRHT7e3qXVQ",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_eWLnui2OP2sCcBRARoAxP_OEkE",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:45 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "fsFdsYJoAXYrgJysjG7Mml7knoI",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14508,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "h-yhGZU2Wlgpk9KrpY8KKpbevgU",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14088,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "guUSuvwim5stPtqLrpPZtx1xmBQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:46 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "HAGff3e_v-EviSp8_26FePE8jGk",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:50 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WKxdbjOVlrl5Y5hmpG9qR9Y-XII",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14509,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CQAXtxZu9dVnO3Wx9HeBOprEzeo",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "yQbb4UPXfuBbleK-8hLWImQGZW4",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14353,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:51 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WVyfSWNlOhhAEU8jVRHT7e3qXVQ",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_eWLnui2OP2sCcBRARoAxP_OEkE",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "fsFdsYJoAXYrgJysjG7Mml7knoI",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14508,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:52 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "OiTFxS5xVAHU7JsyP6PjC23LeGY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:53 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "guUSuvwim5stPtqLrpPZtx1xmBQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:53 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "HAGff3e_v-EviSp8_26FePE8jGk",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:57 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "786-CL-aQVGdWim9UUkGzw3loXQ",
+  "nextPageToken": "CNgEEAA",
+  "prevPageToken": "CKYEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "CQAXtxZu9dVnO3Wx9HeBOprEzeo",
+  "nextPageToken": "CIoFEAA",
+  "prevPageToken": "CNgEEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "TtOtWwx4KinQMc-ZvyT2MAocd6E",
+  "nextPageToken": "CLwFEAA",
+  "prevPageToken": "CIoFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:58 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "WVyfSWNlOhhAEU8jVRHT7e3qXVQ",
+  "nextPageToken": "CO4FEAA",
+  "prevPageToken": "CLwFEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "_eWLnui2OP2sCcBRARoAxP_OEkE",
+  "nextPageToken": "CKAGEAA",
+  "prevPageToken": "CO4FEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "PSqSyQVwd-H3nyzA9Pc-YSkZuiU",
+  "nextPageToken": "CNIGEAA",
+  "prevPageToken": "CKAGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:41:59 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "OiTFxS5xVAHU7JsyP6PjC23LeGY",
+  "nextPageToken": "CIQHEAA",
+  "prevPageToken": "CNIGEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:42:00 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "guUSuvwim5stPtqLrpPZtx1xmBQ",
+  "nextPageToken": "CLYHEAA",
+  "prevPageToken": "CIQHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14271,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:42:00 main.go:360: check : no values was detected in script = 
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "q13swwheNr9lZFqJAbgUtQIpakM",
+  "prevPageToken": "CLYHEAE",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 14187,
+    "resultsPerPage": 50
+  },
+  "items": []
+}
+
+Log2020/11/06 13:42:12 main.go:430: Url length : 585
