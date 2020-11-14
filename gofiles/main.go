@@ -86,7 +86,12 @@ func varifyPayment(server *Server) (varifiedPaymentBool bool, err error) {
 }
 func handler(w http.ResponseWriter, r *http.Request) {
 	server := newServer(&w, r)
-	varifiedPaymentBool, _ := varifyPayment(&server)
+	varifiedPaymentBool, err := varifyPayment(&server)
+	if err != nil {
+		fmt.Printf("err = %v\n", err.Error())
+		return
+	}
+	fmt.Printf("varifiedPaymentBool = %v\n", varifiedPaymentBool)
 	// ----------------- header -----------------
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-type", "application/json; charset=UTF-8")

@@ -5879,3 +5879,56 @@ Log2020/11/06 13:42:00 main.go:360: check : no values was detected in script =
 }
 
 Log2020/11/06 13:42:12 main.go:430: Url length : 585
+Log2020/11/14 12:29:09 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:29:09 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:29:09 main.go:118: Error 1267: Illegal mix of collations (utf8_bin,IMPLICIT) and (utf8mb4_general_ci,COERCIBLE) for operation '='
+Log2020/11/14 12:29:55 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:29:55 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:29:55 main.go:344: error : All ytb_api_key_quota is lower than 0. We need more api keys
+Log2020/11/14 12:29:55 main.go:467: Url length : 0
+Log2020/11/14 12:29:56 main.go:209: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_upda' at line 1
+Log2020/11/14 12:29:56 main.go:210: error : SQL Query : INSERT INTO channels(channel, title, chan_url, last_update, chan_img, avr_views, ttl_views, subs, about) VALUES AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;
+Log2020/11/14 12:31:16 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:31:16 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:31:59 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:31:59 main.go:50: error : no such header value of IDToken was found.
+Log2020/11/14 12:32:38 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:32:38 main.go:50: error : no such header value of IDToken was found.
+Log2020/11/14 12:34:37 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:34:37 main.go:92: error : no such header value of IDToken was found.
+Log2020/11/14 12:34:37 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:34:37 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:35:12 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:35:12 main.go:92: error : no such header value of IDToken was found.
+Log2020/11/14 12:35:12 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:35:12 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:38:40 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:38:40 main.go:92: error : no such header value of IDToken was found.
+Log2020/11/14 12:38:40 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:38:40 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:43:46 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:43:46 main.go:92: error : no such header value of IDToken was found.
+Log2020/11/14 12:43:46 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:43:46 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:44:45 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:44:45 main.go:92: error : no such header value of IDToken was found.
+Log2020/11/14 12:44:45 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:44:45 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:45:14 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:45:14 main.go:92: error : no such header value of IDToken was found.
+Log2020/11/14 12:45:14 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:45:14 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:46:58 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:46:58 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:47:04 server.go:66: error : no such header value of IDToken was found.
+Log2020/11/14 12:47:04 main.go:49: error : no such header value of IDToken was found.
+Log2020/11/14 12:48:05 firebase.go:28: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:48:05 main.go:56: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:48:24 firebase.go:28: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:48:24 main.go:56: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:49:01 firebase.go:28: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:49:01 main.go:56: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:57:48 firebase.go:28: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:57:48 main.go:55: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:58:30 firebase.go:28: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.
+Log2020/11/14 12:58:30 main.go:55: cannot read credentials file: open ../firebaseCredential.json: The system cannot find the file specified.

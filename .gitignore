@@ -1,2 +1,6 @@
 *.zip
 go-search-server-v2
+
+#credentials
+*.env
+*.json
