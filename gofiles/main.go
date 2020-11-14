@@ -10,7 +10,6 @@ import (
 	"math/rand"
 	"net/http"
 	"net/url"
-	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -24,18 +23,10 @@ import (
 var (
 	youtubeAPIRunOut = false
 )
-
-// --------------------------------- mutex var --------------------------------------
 var (
 	lambdaCountMax = 200
 	lambdaCountUID = getInt.randomFromRange(0, lambdaCountMax)
 	lambdaMutex    sync.Mutex
-)
-
-// --------------------------------- logger var --------------------------------------
-var (
-	loggerFile, _ = os.OpenFile("err.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	logger        = log.New(loggerFile, "Log", log.LstdFlags|log.Lshortfile)
 )
 
 // --------------------------------- server functions --------------------------------------
@@ -52,7 +43,50 @@ func main() {
 	http.HandleFunc("/search", handler)
 	log.Fatal(http.ListenAndServe(":3000", nil))
 }
+func varifyPayment(server *Server) (varifiedPaymentBool bool, err error) {
+	IDTokenStr, err := server.getStr.header("IDToken")
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	context := server.r.Context()
+	firebase, err := newFirebase(&context)
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	firebaseToken, err := firebase.getToken.fromTokenStr(IDTokenStr)
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	mysql, err := newMysql()
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	UID := firebase.getStr.UIDFromToken(firebaseToken)
+	paymentID, err := mysql.getStr.paymentIDFromUID(UID)
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	paypal, err := newPaypal()
+	accessToken, err := paypal.getStr.accessToken()
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	varifiedPaymentBool, err = paypal.getBool.varifyPaymentFromPaymentID(paymentID, accessToken)
+	if err != nil {
+		logger.Printf(err.Error())
+		return false, err
+	}
+	return varifiedPaymentBool, err
+}
 func handler(w http.ResponseWriter, r *http.Request) {
+	server := newServer(&w, r)
+	varifiedPaymentBool, _ := varifyPayment(&server)
 	// ----------------- header -----------------
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-type", "application/json; charset=UTF-8")
@@ -253,13 +287,16 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		b.WriteString(aryWriter("AND subs <= '", sbMax, "' "))
 	}
 	// ----------------- page parameter -----------------
-	pageInt, err := strconv.Atoi(queryOrDefaultStr("page", "1", r))
-	amountInPage := 20
-	if err != nil {
-		fmt.Printf("error : %v\n", err)
-		logger.Println(err.Error())
-		return
+	var pageInt int = 1
+	if varifiedPaymentBool {
+		pageInt, err = strconv.Atoi(queryOrDefaultStr("page", "1", r))
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
+			return
+		}
 	}
+	amountInPage := 20
 	// ----------------- getallpage parameter -----------------
 	getAll := queryOrDefaultStr("getall", "", r)
 	if getAll != "true" {
