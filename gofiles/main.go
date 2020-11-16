@@ -340,7 +340,7 @@ func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string, 
 	start := time.Now()
 	youtubeChannelsMap := make(map[string]bool)
 
-	APIRequestAmount := 100
+	APIRequestAmount := 30
 	APIQuotaPerRequest := 100
 	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
 

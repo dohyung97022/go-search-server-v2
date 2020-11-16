@@ -1,4 +1,4 @@
-FOLDER=go-search-server
+FOLDER=go-search-server-v2
 
 echo "running $FOLDER installer"
 
@@ -33,7 +33,7 @@ unzip $ZIPFILE -d $FILE
 
 rm $ZIPFILE
 
-GOEXICUTE=/root/$FOLDER/$FOLDER
+GOEXICUTE=/root/$FOLDER/gofiles/gofiles
 if [ -f "$GOEXICUTE" ];
 then
     echo "$GOEXICUTE exists."
@@ -45,4 +45,4 @@ else
 fi
 
 cd $FILE
-./$FOLDER
+./gofiles
