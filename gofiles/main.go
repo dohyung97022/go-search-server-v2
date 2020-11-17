@@ -90,15 +90,19 @@ func varifyPayment(server *Server) (varifiedPaymentBool bool, err error) {
 	return varifiedPaymentBool, err
 }
 func handler(w http.ResponseWriter, r *http.Request) {
+	// ----------------- header -----------------
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "IDToken")
+	w.Header().Set("Content-type", "application/json; charset=UTF-8")
+	if r.Method == "OPTIONS" {
+		return
+	}
 	// ----------------- execution time -----------------
 	fmt.Println("request on 3000 (search)")
 	startTime := time.Now()
 	defer func() {
 		fmt.Printf("Binomial took %v\n", time.Since(startTime))
 	}()
-	// ----------------- header -----------------
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Content-type", "application/json; charset=UTF-8")
 	// ----------------- varification -----------------
 	server := newServer(&w, r)
 	varifiedPaymentBool, err := varifyPayment(&server)
