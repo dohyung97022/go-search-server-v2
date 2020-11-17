@@ -336,47 +336,6 @@ func queryOrDefaultStr(query string, def string, r *http.Request) string {
 }
 
 // --------------------------------- Youtube API functions --------------------------------------
-func getYoutubeAPIChannelsHandler(search string) (youtubeChannelIDAry []string, err error) {
-	start := time.Now()
-	youtubeChannelsMap := make(map[string]bool)
-
-	APIRequestAmount := 30
-	APIQuotaPerRequest := 100
-	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
-
-	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
-	if err != nil {
-		fmt.Printf("error : %v\n", err)
-		logger.Println(err.Error())
-		return nil, nil
-	}
-
-	pageToken := ""
-	for i := 0; i < APIRequestAmount; i++ {
-		youtubeChannels, newPageToken, err := getYoutubeAPIChannels(search, pageToken, ytbAPIKey)
-		if err != nil {
-			fmt.Printf("error : %v\n", err)
-			logger.Println(err.Error())
-			return nil, err
-		}
-		//결과가 나오지 않을 경우 다시 youtube api key를 받는다? 필요성이 있을까? 너무 복잡하지 않나?
-		// if err != nil {
-		// 	setYoutubeAPIKeyQuotaTo(ytbAPIKey, 0)
-		// 	ytbAPIKey, err = getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
-		// 	if err != nil {
-		// 		fmt.Printf("error : %v\n", err)
-		// 		logger.Println(err.Error())
-		// 		return nil
-		// 	}
-		// }
-		pageToken = newPageToken
-		for _, youtubeChannel := range youtubeChannels {
-			youtubeChannelsMap[youtubeChannel] = true
-		}
-	}
-	timeTrack(start, "getYoutubeAPIChannelsHandler")
-	return getStrAryFromStrBoolMap(youtubeChannelsMap), nil
-}
 func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (youtubeChannels []string, nextPageToken string, err error) {
 	response, err := http.Get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&type=channel&pageToken=" + pageToken + "&q=" + search + "&key=" + APIkey)
 	if err != nil {
@@ -398,9 +357,10 @@ func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (yout
 		youtubeChannels = append(youtubeChannels, id["channelId"].(string))
 	}
 	//----------결과가 나오지 않았다면 json의 [error][errors][reason] = quotaExceeded ----------
-	// 이 케이스의 경우 error를 주고 새롷은 api key로 다시 하게끔 한다?
+	// 이 케이스의 경우 ""을 돌려준다.
 	if len(youtubeChannels) == 0 {
 		logger.Printf("check : no values was detected in script = \n%v\n", string(body))
+		return youtubeChannels, "", nil
 	}
 	return youtubeChannels, nextPageToken, nil
 }
@@ -449,28 +409,66 @@ func scrape(search string) (channels []string, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
 
-	channels, err = getYoutubeAPIChannelsHandler(search)
+	APIRequestAmount := 10
+	APIQuotaPerRequest := 100
+	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
+	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
 	if err != nil {
-		return nil, nil, err
+		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
+		return nil, nil, nil
+	}
+	chURLScript := make(chan map[string]string)
+	chFinished := make(chan bool)
+	pageToken := ""
+	APIPagesCount := 0
+	for i := 0; i < APIRequestAmount; i++ {
+		youtubeChannelsMap := make(map[string]bool)
+		youtubeChannels, newPageToken, err := getYoutubeAPIChannels(search, pageToken, ytbAPIKey)
+		if err != nil {
+			fmt.Printf("error : %v\n", err)
+			logger.Println(err.Error())
+			return nil, nil, err
+		}
+		if len(youtubeChannels) == 0 {
+			break
+		}
+		pageToken = newPageToken
+		APIPagesCount++
+		for _, youtubeChannel := range youtubeChannels {
+			youtubeChannelsMap[youtubeChannel] = true
+		}
+		UrlsArray := []string{}
+		for channel := range youtubeChannelsMap {
+			UrlsArray = append(UrlsArray, "https://www.youtube.com/channel/"+channel+"/about")
+			UrlsArray = append(UrlsArray, "https://www.youtube.com/channel/"+channel+"/videos")
+
+		}
+		go func() {
+			chURLScript <- callScraperHandler(UrlsArray, "goquery")
+			chFinished <- true
+		}()
 	}
 
-	aboutUrlsArray := []string{}
-	for _, channel := range channels {
-		aboutUrlsArray = append(aboutUrlsArray, "https://www.youtube.com/channel/"+channel+"/about")
+	URLScriptAbout := make(map[string]string)
+	URLScriptVideos := make(map[string]string)
+	for i := 0; i < APIPagesCount; {
+		select {
+		case gotURLScript := <-chURLScript:
+			for URL, script := range gotURLScript {
+				if strings.Contains(URL, "videos") {
+					URLScriptVideos[URL] = script
+				} else {
+					URLScriptAbout[URL] = script
+				}
+			}
+		case <-chFinished:
+			i++
+		}
 	}
-	videosUrlsArray := []string{}
-	for _, channel := range channels {
-		videosUrlsArray = append(videosUrlsArray, "https://www.youtube.com/channel/"+channel+"/videos")
-	}
-	chAbout := make(chan map[string]string)
-	chVideos := make(chan map[string]string)
-	go func() { chAbout <- callScraperHandler(aboutUrlsArray, "goquery") }()
-	go func() { chVideos <- callScraperHandler(videosUrlsArray, "goquery") }()
 
-	URLScriptAbout := <-chAbout
-	URLScriptVideos := <-chVideos
-
-	logger.Printf("Url length : %v", len(URLScriptAbout))
+	fmt.Printf("Url length : %v\n", len(URLScriptAbout))
+	logger.Printf("Url length : %v\n", len(URLScriptAbout))
 
 	chanInfo := findInfoHandler(URLScriptAbout)
 	chanVideosInfo := findVideosInfoHandler(URLScriptVideos)
@@ -703,7 +701,7 @@ func callScraperHandler(urlArray []string, scrapeType string) (finalURLScripts m
 	chanURLScripts := make(chan map[string]string)
 	chFinished := make(chan bool)
 	//devider가 작을수록 더 scraper가 많이 분산됩니다. devider는 lambda마다의 과부화
-	devider := 2
+	devider := 3
 	quotient, remainder := len(urlArray)/devider, len(urlArray)%devider
 	for i := 0; i < quotient; i++ {
 		go callScraper(urlArray[i*devider:((i+1)*devider)], scrapeType, chanURLScripts, chFinished)
@@ -741,12 +739,20 @@ func callScraper(urls []string, callType string, chanURLScripts chan map[string]
 	}
 	lambdaMutex.Unlock()
 
-	request, _ := http.NewRequest("POST", "https://1vzze2ned9.execute-api.us-east-1.amazonaws.com/default/test/go-scraper-"+strconv.Itoa(lambdaCount), bytes.NewBuffer(bodyJSON))
-	response, _ := client.Do(request)
-	body, _ := ioutil.ReadAll(response.Body)
+	request, err := http.NewRequest("POST", "https://1vzze2ned9.execute-api.us-east-1.amazonaws.com/default/test/go-scraper-"+strconv.Itoa(lambdaCount), bytes.NewBuffer(bodyJSON))
+	if err != nil {
+		logger.Printf(err.Error())
+	}
+	response, err := client.Do(request)
+	if err != nil {
+		logger.Printf(err.Error())
+	}
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		logger.Printf(err.Error())
+	}
 	URLScripts := make(map[string]string)
 	json.Unmarshal(body, &URLScripts)
-
 	response.Body.Close()
 	chanURLScripts <- URLScripts
 	chFinished <- true
