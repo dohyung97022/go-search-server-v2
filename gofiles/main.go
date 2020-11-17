@@ -30,7 +30,8 @@ var (
 )
 
 // --------------------------------- server functions --------------------------------------
-//http://ec2-54-161-234-228.compute-1.amazonaws.com:3000/search?search=
+
+//http://http://ec2-54-161-234-228.compute-1.amazonaws.com:3000/search?search=
 // http://localhost:3000/search?search=
 func main() {
 	err := msqlf.Init("dohyung97022", "9347314da!", "adiy-db.cxdzwqqcqoib.us-east-1.rds.amazonaws.com", 3306, "adiy")
