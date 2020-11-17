@@ -107,12 +107,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		logger.Printf("err = %v\n", err.Error())
 	}
 	fmt.Printf("varifiedPaymentBool = %v\n", varifiedPaymentBool)
-	// ----------------- check ytb api runout -----------------
-	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
-	if err != nil {
-		fmt.Fprintf(w, "%s", "We have ran out of youtube api quotas. Please try again tomorrow.")
-		return
-	}
 	// ----------------- search parameters -----------------
 	var b strings.Builder
 	search := queryOrDefaultStr("search", "", r)
@@ -183,6 +177,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	// channelBools := make(map[string]bool)
 	if needRef {
+		// ----------------- check ytb api key -----------------
+		ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
+		if err != nil {
+			fmt.Fprintf(w, "%s", "We have ran out of youtube api quotas. Please try again tomorrow.")
+			return
+		}
 		// ----------------- scrape, put or update data -----------------
 		_, intInfo, err := scrape(search, ytbAPIKey)
 		if err != nil {
