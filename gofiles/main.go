@@ -19,10 +19,14 @@ import (
 	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
-// --------------------------------- mutex var --------------------------------------
+// --------------------------------- global var --------------------------------------
 var (
-	youtubeAPIRunOut = false
+	APIRequestAmount   = 10
+	APIQuotaPerRequest = 100
+	APIQuotaPerSearch  = APIRequestAmount * APIQuotaPerRequest
 )
+
+// --------------------------------- mutex var --------------------------------------
 var (
 	lambdaCountMax = 200
 	lambdaCountUID = getInt.randomFromRange(0, lambdaCountMax)
@@ -104,7 +108,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 	fmt.Printf("varifiedPaymentBool = %v\n", varifiedPaymentBool)
 	// ----------------- check ytb api runout -----------------
-	if youtubeAPIRunOut == true {
+	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
+	if err != nil {
 		fmt.Fprintf(w, "%s", "We have ran out of youtube api quotas. Please try again tomorrow.")
 		return
 	}
@@ -179,14 +184,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// channelBools := make(map[string]bool)
 	if needRef {
 		// ----------------- scrape, put or update data -----------------
-		_, intInfo, err := scrape(search)
+		_, intInfo, err := scrape(search, ytbAPIKey)
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
-			if strings.Contains(err.Error(), "All ytb_api_key_quota is lower than 0.") {
-				youtubeAPIRunOut = true
-				return
-			}
 		}
 		// ----------------- put data -----------------
 		b.Reset()
@@ -406,18 +407,14 @@ func setYoutubeAPIKeyQuotaTo(APIKey string, quotaTo int) (err error) {
 }
 
 // --------------------------------- scrape functions --------------------------------------
-func scrape(search string) (channels []string, intInfo []info, err error) {
+func scrape(search string, ytbAPIKey string) (channels []string, intInfo []info, err error) {
 	search, _ = url.PathUnescape(search)
 	search = strings.ReplaceAll(search, " ", "+")
 
-	APIRequestAmount := 10
-	APIQuotaPerRequest := 100
-	APIQuotaPerSearch := APIRequestAmount * APIQuotaPerRequest
-	ytbAPIKey, err := getYoutubeAPIKeyFromMysql(APIQuotaPerSearch)
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())
-		return nil, nil, nil
+		return nil, nil, err
 	}
 	chURLScript := make(chan map[string]string)
 	chFinished := make(chan bool)
