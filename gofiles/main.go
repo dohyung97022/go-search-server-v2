@@ -299,9 +299,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		b.WriteString(aryWriter("AND subs <= '", sbMax, "' "))
 	}
 	// ----------------- page parameter -----------------
-	var pageInt int = 1
+	var pageInt int = 0
 	if varifiedPaymentBool {
-		pageInt, err = strconv.Atoi(queryOrDefaultStr("page", "1", r))
+		pageInt, err = strconv.Atoi(queryOrDefaultStr("page", "0", r))
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -312,8 +312,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// ----------------- getallpage parameter -----------------
 	getAll := queryOrDefaultStr("getall", "", r)
 	if getAll != "true" {
-		b.WriteString(aryWriter("LIMIT ", strconv.Itoa((pageInt-1)*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
+		b.WriteString(aryWriter("LIMIT ", strconv.Itoa(pageInt*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
 	}
+	logger.Printf("the error sql string is : %v\n", b.String())
 	v, err = msqlf.GetQuery(b.String())
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
