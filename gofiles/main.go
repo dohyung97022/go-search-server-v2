@@ -111,6 +111,42 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		logger.Printf("err = %v\n", err.Error())
 	}
 	fmt.Printf("varifiedPaymentBool = %v\n", varifiedPaymentBool)
+	// ----------------- condition parameters -----------------
+	avMin := queryOrDefaultStr("avmin", "", r)
+	avMax := queryOrDefaultStr("avmax", "", r)
+	sbMin := queryOrDefaultStr("sbmin", "", r)
+	sbMax := queryOrDefaultStr("sbmax", "", r)
+	// ----------------- page parameter -----------------
+	pageInt, err := tools.getInt.fromStr(queryOrDefaultStr("page", "0", r))
+	if err != nil {
+		fmt.Printf("error : %v\n", err)
+		logger.Println(err.Error())
+		return
+	}
+	// ----------------- get params -----------------
+	if !varifiedPaymentBool {
+		avMinInt, _ := tools.getInt.fromStr(avMin)
+		avMaxInt, _ := tools.getInt.fromStr(avMax)
+		sbMinInt, _ := tools.getInt.fromStr(sbMin)
+		sbMaxInt, _ := tools.getInt.fromStr(sbMax)
+		fmt.Printf("avMinInt = %v\n", avMinInt)
+		fmt.Printf("avMaxInt = %v\n", avMaxInt)
+		fmt.Printf("sbMinInt = %v\n", sbMinInt)
+		fmt.Printf("sbMaxInt = %v\n", sbMaxInt)
+		// ----------------- is payment varified for params? -----------------
+		if avMinInt > 10000 || avMaxInt > 50000 || sbMinInt > 10000 || sbMaxInt > 50000 || pageInt > 0 {
+			JSON := make(map[string]string)
+			JSON["payment"] = "false"
+			bodyJSON, err := json.Marshal(JSON)
+			if err != nil {
+				fmt.Printf("error :%v\n", err)
+				logger.Println(err.Error())
+				return
+			}
+			fmt.Fprintf(w, "%s", bodyJSON)
+			return
+		}
+	}
 	// ----------------- search parameters -----------------
 	var b strings.Builder
 	search := queryOrDefaultStr("search", "", r)
@@ -278,11 +314,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	// ----------------- condition parameters -----------------
-	avMin := queryOrDefaultStr("avmin", "", r)
-	avMax := queryOrDefaultStr("avmax", "", r)
-	sbMin := queryOrDefaultStr("sbmin", "", r)
-	sbMax := queryOrDefaultStr("sbmax", "", r)
 	// ----------------- fetch data -----------------
 	b.Reset()
 	b.WriteString(aryWriter("SELECT * FROM channels_views WHERE query = '", search, "' "))
@@ -298,18 +329,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if sbMax != "" {
 		b.WriteString(aryWriter("AND subs <= '", sbMax, "' "))
 	}
-	// ----------------- page parameter -----------------
-	var pageInt int = 0
-	if varifiedPaymentBool {
-		pageInt, err = strconv.Atoi(queryOrDefaultStr("page", "0", r))
-		if err != nil {
-			fmt.Printf("error : %v\n", err)
-			logger.Println(err.Error())
-			return
-		}
-	}
+	// ----------------- getall page parameter, get page -----------------
 	amountInPage := 20
-	// ----------------- getallpage parameter -----------------
 	getAll := queryOrDefaultStr("getall", "", r)
 	if getAll != "true" {
 		b.WriteString(aryWriter("LIMIT ", strconv.Itoa(pageInt*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
@@ -321,6 +342,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		logger.Println(err.Error())
 		return
 	}
+	// ----------------- get result -----------------
 	bodyJSON, err := json.Marshal(v)
 	if err != nil {
 		fmt.Printf("error :%v\n", err)
