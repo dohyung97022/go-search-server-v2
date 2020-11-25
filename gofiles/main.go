@@ -21,6 +21,7 @@ import (
 
 // --------------------------------- global var --------------------------------------
 var (
+	mysql, _           = newMysql()
 	APIRequestAmount   = 10
 	APIQuotaPerRequest = 100
 	APIQuotaPerSearch  = APIRequestAmount * APIQuotaPerRequest
@@ -158,8 +159,14 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// ----------------- need scraping? -----------------
-	v, err := msqlf.GetDataOfWhere("search", []string{"last_update", "srch_id"},
-		[]msqlf.Where{msqlf.Where{A: "query", IS: "=", B: search}})
+	// v, err := msqlf.GetDataOfWhere("search", []string{"last_update", "srch_id"},
+	// 	[]msqlf.Where{msqlf.Where{A: "query", IS: "=", B: search}})
+	// if err != nil {
+	// 	fmt.Printf("error : %v\n", err)
+	// 	logger.Println(err.Error())
+	// 	return
+	// }
+	intStrStrVal, err := mysql.getIntStrStrMap.query(`SELECT * FROM adiy.search WHERE query = "` + search + `";`)
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())
@@ -168,27 +175,26 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// ----------------- varify needRef and sechID -----------------
 	needRef := false
 	var srchID int
-	if len(v) == 0 {
+	if len(intStrStrVal) == 0 {
 		// search table has no data of query
 		needRef = true
 		b.WriteString(aryWriter("INSERT INTO search(query, last_update) VALUES('", search, "','", startTime.Format("2006-01-02 15:04:05"), "'); SELECT last_insert_id();"))
 
-		v, err := msqlf.GetQuery(b.String())
+		intStrStrVal, err = mysql.getIntStrStrMap.query(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
 			return
 		}
-		srchID, err = strconv.Atoi(v[0]["last_insert_id()"].(string))
+		srchID, err = strconv.Atoi(intStrStrVal[0]["last_insert_id()"])
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
 			return
 		}
-
 	} else {
 		// ----------------- search has data of query -----------------
-		t, err := time.Parse("2006-01-02 15:04:05", v[0]["last_update"].(string))
+		t, err := time.Parse("2006-01-02 15:04:05", intStrStrVal[0]["last_update"])
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -197,7 +203,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// ----------------- outdated -----------------
 		if t.Before(startTime.AddDate(0, 0, -2)) {
 			needRef = true
-			srchID, err = strconv.Atoi(v[0]["srch_id"].(string))
+			srchID, err = strconv.Atoi(intStrStrVal[0]["srch_id"])
 			if err != nil {
 				fmt.Printf("error : %v\n", err)
 				logger.Println(err.Error())
@@ -215,7 +221,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-
 	// channelBools := make(map[string]bool)
 	if needRef {
 		// ----------------- check ytb api key -----------------
@@ -337,7 +342,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		b.WriteString(aryWriter("LIMIT ", strconv.Itoa(pageInt*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
 	}
 	logger.Printf("the error sql string is : %v\n", b.String())
-	v, err = msqlf.GetQuery(b.String())
+	v, err := msqlf.GetQuery(b.String())
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())
