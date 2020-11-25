@@ -15,8 +15,6 @@ import (
 	"strings"
 	"sync"
 	"time"
-
-	msqlf "github.com/dohyung97022/mysqlfunc"
 )
 
 // --------------------------------- global var --------------------------------------
@@ -39,12 +37,6 @@ var (
 //http://http://ec2-54-161-234-228.compute-1.amazonaws.com:3000/search?search=
 // http://localhost:3000/search?search=
 func main() {
-	err := msqlf.Init("dohyung97022", "9347314da!", "adiy-db.cxdzwqqcqoib.us-east-1.rds.amazonaws.com", 3306, "adiy")
-	if err != nil {
-		fmt.Printf("error : %v\n", err)
-		logger.Println(err.Error())
-		return
-	}
 	fmt.Println("server is up and running")
 	http.HandleFunc("/search", handler)
 	log.Fatal(http.ListenAndServe(":80", nil))
@@ -159,7 +151,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// ----------------- need scraping? -----------------
-	intStrStrVal, err := mysql.getIntStrStrMap.query(`SELECT * FROM adiy.search WHERE query = "` + search + `";`)
+	intStrStrMap, err := mysql.getIntStrStrMap.query(`SELECT * FROM adiy.search WHERE query = "` + search + `";`)
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())
@@ -168,18 +160,18 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// ----------------- varify needRef and sechID -----------------
 	needRef := false
 	var srchID int
-	if len(intStrStrVal) == 0 {
+	if len(intStrStrMap) == 0 {
 		// search table has no data of query
 		needRef = true
 		b.WriteString(aryWriter("INSERT INTO search(query, last_update) VALUES('", search, "','", startTime.Format("2006-01-02 15:04:05"), "'); SELECT last_insert_id();"))
 
-		intStrStrVal, err = mysql.getIntStrStrMap.query(b.String())
+		intStrStrMap, err = mysql.getIntStrStrMap.query(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
 			return
 		}
-		srchID, err = strconv.Atoi(intStrStrVal[0]["last_insert_id()"])
+		srchID, err = strconv.Atoi(intStrStrMap[0]["last_insert_id()"])
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -187,7 +179,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		}
 	} else {
 		// ----------------- search has data of query -----------------
-		t, err := time.Parse("2006-01-02 15:04:05", intStrStrVal[0]["last_update"])
+		t, err := time.Parse("2006-01-02 15:04:05", intStrStrMap[0]["last_update"])
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -196,7 +188,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// ----------------- outdated -----------------
 		if t.Before(startTime.AddDate(0, 0, -2)) {
 			needRef = true
-			srchID, err = strconv.Atoi(intStrStrVal[0]["srch_id"])
+			srchID, err = strconv.Atoi(intStrStrMap[0]["srch_id"])
 			if err != nil {
 				fmt.Printf("error : %v\n", err)
 				logger.Println(err.Error())
@@ -205,7 +197,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			// ----------------- update last_update -----------------
 			b.Reset()
 			b.WriteString(aryWriter("UPDATE search SET last_update = '", startTime.Format("2006-01-02 15:04:05"), "' WHERE srch_id = ", strconv.Itoa(srchID)))
-			err = msqlf.ExecQuery(b.String())
+			err = mysql.execute.query(b.String())
 			if err != nil {
 				fmt.Printf("error : %v\n", err)
 				logger.Println(err.Error())
@@ -250,7 +242,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		// ----------------- update data -----------------
 		b.WriteString(" AS dpc ON DUPLICATE KEY UPDATE title=dpc.title, chan_url=dpc.chan_url, last_update=dpc.last_update, chan_img=dpc.chan_img, avr_views=dpc.avr_views, ttl_views=dpc.ttl_views, subs=dpc.subs, about=dpc.about;")
 		// ----------------- exec query -----------------
-		err = msqlf.ExecQuery(b.String())
+		err = mysql.execute.query(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -287,7 +279,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			  email=(CASE WHEN dpc.email='' THEN contacts.email ELSE dpc.email END);`)
 
 		// ----------------- exec query -----------------
-		err = msqlf.ExecQuery(b.String())
+		err = mysql.execute.query(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -305,7 +297,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			}
 			b.WriteString(",")
 		}
-		err = msqlf.ExecQuery(b.String())
+		err = mysql.execute.query(b.String())
 		if err != nil {
 			fmt.Printf("error : %v\n", err)
 			logger.Println(err.Error())
@@ -334,8 +326,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if getAll != "true" {
 		b.WriteString(aryWriter("LIMIT ", strconv.Itoa(pageInt*amountInPage), ", ", strconv.Itoa(amountInPage), " "))
 	}
-	logger.Printf("the error sql string is : %v\n", b.String())
-	v, err := msqlf.GetQuery(b.String())
+	fmt.Printf("the error expected sql string is : %v\n", b.String())
+	v, err := mysql.getIntStrStrMap.query(b.String())
+	fmt.Printf("the error v is : %v\n", v)
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())
@@ -393,7 +386,7 @@ func getYoutubeAPIChannels(search string, pageToken string, APIkey string) (yout
 	return youtubeChannels, nextPageToken, nil
 }
 func getYoutubeAPIKeyFromMysql(APIQuotaPerSearch int) (ytbAPIKey string, err error) {
-	v, err := msqlf.GetQuery(`
+	intStrStrMap, err := mysql.getIntStrStrMap.query(`
 	SET @api_key = "";
 	SET @quota = "";
 
@@ -409,8 +402,8 @@ func getYoutubeAPIKeyFromMysql(APIQuotaPerSearch int) (ytbAPIKey string, err err
 	if err != nil {
 		return
 	}
-	ytbAPIKey = v[0]["ytb_api_key"].(string)
-	ytbAPIKeyQuota, err := strconv.Atoi(v[0]["ytb_api_key_quota"].(string))
+	ytbAPIKey = intStrStrMap[0]["ytb_api_key"]
+	ytbAPIKeyQuota, err := strconv.Atoi(intStrStrMap[0]["ytb_api_key_quota"])
 
 	if ytbAPIKeyQuota <= 0 {
 		err = errors.New("error : All ytb_api_key_quota is lower than 0. We need more api keys")
@@ -425,7 +418,7 @@ func setYoutubeAPIKeyQuotaTo(APIKey string, quotaTo int) (err error) {
 		SET ytb_api_key_quota = ` + strconv.Itoa(quotaTo) + `
 		WHERE ytb_api_key =` + APIKey)
 
-	err = msqlf.ExecQuery(b.String())
+	err = mysql.execute.query(b.String())
 	if err != nil {
 		return err
 	}

@@ -31,7 +31,7 @@ func Test2(t *testing.T) {
 		logger.Printf(err.Error())
 		return
 	}
-	v, err := mysql.getIntStrStrMap.query(`SELECT * FROM adiy.search`)
+	v, err := mysql.getIntStrStrMap.query(`SELECT * FROM channels_views WHERE query = '플랫폼' LIMIT 0, 20 `)
 	if err != nil {
 		fmt.Printf("error : %v\n", err)
 		logger.Println(err.Error())

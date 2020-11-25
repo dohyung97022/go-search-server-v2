@@ -83,8 +83,6 @@ type mysqlGetIntStrStrMap struct {
 //mysql.getIntStrStrMap.query
 func (mysql *mysqlGetIntStrStrMap) query(queryStr string) (intStrStrMap map[int]map[string]string, err error) {
 	intStrStrMap = make(map[int]map[string]string)
-	strStrMap := make(map[string]string)
-
 	rows, err := mysql.DB.Query(queryStr)
 	defer rows.Close()
 	if err != nil {
@@ -107,13 +105,14 @@ func (mysql *mysqlGetIntStrStrMap) query(queryStr string) (intStrStrMap map[int]
 		if err != nil {
 			log.Fatal(err)
 		}
+		strStrMap := make(map[string]string)
 		for i, currentValue := range values {
 			byteValue, done := currentValue.([]byte)
 			if done {
 				strStrMap[colNames[i]] = string(byteValue)
-				intStrStrMap[rowCount] = strStrMap
 			}
 		}
+		intStrStrMap[rowCount] = strStrMap
 		rowCount++
 	}
 	return intStrStrMap, nil
