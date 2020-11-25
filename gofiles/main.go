@@ -159,13 +159,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// ----------------- need scraping? -----------------
-	// v, err := msqlf.GetDataOfWhere("search", []string{"last_update", "srch_id"},
-	// 	[]msqlf.Where{msqlf.Where{A: "query", IS: "=", B: search}})
-	// if err != nil {
-	// 	fmt.Printf("error : %v\n", err)
-	// 	logger.Println(err.Error())
-	// 	return
-	// }
 	intStrStrVal, err := mysql.getIntStrStrMap.query(`SELECT * FROM adiy.search WHERE query = "` + search + `";`)
 	if err != nil {
 		fmt.Printf("error : %v\n", err)

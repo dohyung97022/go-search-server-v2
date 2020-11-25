@@ -61,6 +61,7 @@ type mysqlGetStr struct {
 func (mysql *mysqlGetStr) paymentIDFromUID(UIDStr string) (paymentIDStr string, err error) {
 	fmt.Printf("uid str := %v\n", UIDStr)
 	rows, err := mysql.DB.Query(`SELECT * FROM adiy.firebase_uid WHERE uid = "` + UIDStr + `"`)
+	defer rows.Close()
 	if err != nil {
 		return "", err
 	}
