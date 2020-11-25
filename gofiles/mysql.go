@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"os"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -11,10 +12,10 @@ import (
 
 //Mysql ----------------------------------------------------------
 type Mysql struct {
-	DB        *sql.DB
-	execute   mysqlExecute
-	getStr    mysqlGetStr
-	getStrAry mysqlGetStrAry
+	DB              *sql.DB
+	execute         mysqlExecute
+	getStr          mysqlGetStr
+	getIntStrStrMap mysqlGetIntStrStrMap
 }
 
 //mysql constructor
@@ -34,7 +35,7 @@ func newMysql() (mysql Mysql, err error) {
 	mysql.DB = DB
 	mysql.execute.DB = DB
 	mysql.getStr.DB = DB
-	mysql.getStrAry.DB = DB
+	mysql.getIntStrStrMap.DB = DB
 	return mysql, nil
 }
 
@@ -73,20 +74,46 @@ func (mysql *mysqlGetStr) paymentIDFromUID(UIDStr string) (paymentIDStr string, 
 	return paymentIDStr, nil
 }
 
-//mysql.getStrAry
-type mysqlGetStrAry struct {
+//mysql.getStrStrMap
+type mysqlGetIntStrStrMap struct {
 	DB *sql.DB
 }
 
-//mysql.getStrAry.query
-func (mysql *mysqlGetStrAry) query(queryStr string) (resStrAry []string, err error) {
+//mysql.getIntStrStrMap.query
+func (mysql *mysqlGetIntStrStrMap) query(queryStr string) (intStrStrMap map[int]map[string]string, err error) {
+	intStrStrMap = make(map[int]map[string]string)
+	strStrMap := make(map[string]string)
+
 	rows, err := mysql.DB.Query(queryStr)
+	defer rows.Close()
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
-	columns, err := rows.Columns()
+	colNames, err := rows.Columns()
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
-	return columns, nil
+	colLength := len(colNames)
+	values := make([]interface{}, colLength)
+	valuePtrs := make([]interface{}, colLength)
+	rowCount := 0
+	for rows.Next() {
+		for i := 0; i < colLength; i++ {
+			valuePtrs[i] = &values[i]
+
+		}
+		err = rows.Scan(valuePtrs...)
+		if err != nil {
+			log.Fatal(err)
+		}
+		for i, currentValue := range values {
+			byteValue, done := currentValue.([]byte)
+			if done {
+				strStrMap[colNames[i]] = string(byteValue)
+				intStrStrMap[rowCount] = strStrMap
+			}
+		}
+		rowCount++
+	}
+	return intStrStrMap, nil
 }

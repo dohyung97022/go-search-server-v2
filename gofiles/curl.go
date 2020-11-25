@@ -1,23 +1,26 @@
 package main
 
-import(
-	"net/http"
-	"io/ioutil"
-	"strings"
-	"net/url"
+import (
+	"encoding/json"
 	"errors"
 	"io"
-	"encoding/json"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
 )
+
 //Curl ----------------------------------------------------------
 type Curl struct {
-	getStr curlGetStr 
+	getStr       curlGetStr
 	getInterface curlGetInterface
-	setRequest curlSetRequest
+	setRequest   curlSetRequest
 }
+
 var curl Curl
+
 //getRequest
-func (*Curl) getRequest(urlStr string, AllCapsMethod string, body io.Reader) (request *http.Request, err error){
+func (*Curl) getRequest(urlStr string, AllCapsMethod string, body io.Reader) (request *http.Request, err error) {
 	request, err = http.NewRequest(AllCapsMethod, urlStr, body)
 	if err != nil {
 		logger.Println(err.Error())
@@ -25,14 +28,16 @@ func (*Curl) getRequest(urlStr string, AllCapsMethod string, body io.Reader) (re
 	}
 	return request, err
 }
+
 //getStr
 type curlGetStr struct{}
+
 //getStr.results
-func (*curlGetStr) results(urlStr string) (resStr string, err error){
-	if urlStr == ""{
+func (*curlGetStr) results(urlStr string) (resStr string, err error) {
+	if urlStr == "" {
 		errStr := `error : getStr.results got urlStr of ""`
 		logger.Printf(errStr)
-		return "" , errors.New(errStr)
+		return "", errors.New(errStr)
 	}
 	response, err := http.Get(urlStr)
 	if err != nil {
@@ -45,10 +50,11 @@ func (*curlGetStr) results(urlStr string) (resStr string, err error){
 		return "", err
 	}
 	defer response.Body.Close()
-	return string(body), nil 
+	return string(body), nil
 }
+
 //getStr.requestResults
-func (*curlGetStr) requestResults(request *http.Request) (resStr string, err error){
+func (*curlGetStr) requestResults(request *http.Request) (resStr string, err error) {
 	client := &http.Client{}
 	response, err := client.Do(request)
 	if err != nil {
@@ -61,14 +67,16 @@ func (*curlGetStr) requestResults(request *http.Request) (resStr string, err err
 		return "", err
 	}
 	defer response.Body.Close()
-	return string(body), nil 
+	return string(body), nil
 }
+
 //getStr.formatedURL
-func (*curlGetStr) formatedURL(urlStr string)(resStr string){
-	return strings.ReplaceAll(urlStr,"\\","")
+func (*curlGetStr) formatedURL(urlStr string) (resStr string) {
+	return strings.ReplaceAll(urlStr, "\\", "")
 }
+
 //getStr.decoded
-func (*curlGetStr) decoded(encodedStr string)(resStr string, err error){
+func (*curlGetStr) decoded(encodedStr string) (resStr string, err error) {
 	resStr, err = url.QueryUnescape(encodedStr)
 	if err != nil {
 		logger.Println(err.Error())
@@ -79,8 +87,9 @@ func (*curlGetStr) decoded(encodedStr string)(resStr string, err error){
 
 //getInterface
 type curlGetInterface struct{}
+
 //getInterface.requestResults
-func (*curlGetInterface) requestResults(request *http.Request, resInterf interface{}) (err error){
+func (*curlGetInterface) requestResults(request *http.Request, resInterf interface{}) (err error) {
 	client := &http.Client{}
 	response, err := client.Do(request)
 	if err != nil {
@@ -93,18 +102,18 @@ func (*curlGetInterface) requestResults(request *http.Request, resInterf interfa
 	// 	return err
 	// }
 	defer response.Body.Close()
-	return  json.NewDecoder(response.Body).Decode(resInterf)
+	return json.NewDecoder(response.Body).Decode(resInterf)
 }
-
-
 
 //setRequest
 type curlSetRequest struct{}
+
 //setRequest.header
-func (*curlSetRequest) header(request *http.Request, keyStr string, valStr string){
+func (*curlSetRequest) header(request *http.Request, keyStr string, valStr string) {
 	request.Header.Set(keyStr, valStr)
 }
+
 //setRequest.userNamePassword
-func (*curlSetRequest) userNamePassword(request *http.Request, userNameStr string, passwordStr string){
+func (*curlSetRequest) userNamePassword(request *http.Request, userNameStr string, passwordStr string) {
 	request.SetBasicAuth(userNameStr, passwordStr)
 }

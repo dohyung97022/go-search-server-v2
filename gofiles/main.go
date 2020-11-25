@@ -46,7 +46,7 @@ func main() {
 	}
 	fmt.Println("server is up and running")
 	http.HandleFunc("/search", handler)
-	log.Fatal(http.ListenAndServe(":3000", nil))
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
 func varifyPayment(server *Server) (varifiedPaymentBool bool, err error) {
 	IDTokenStr, err := server.getStr.header("IDToken")
@@ -67,6 +67,7 @@ func varifyPayment(server *Server) (varifiedPaymentBool bool, err error) {
 	}
 	mysql, err := newMysql()
 	if err != nil {
+		//too many connections error
 		logger.Printf(err.Error())
 		return false, err
 	}
